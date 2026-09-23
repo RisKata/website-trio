@@ -1,0 +1,59 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>{{ 'contact.hero.title' | t }}</h1>
+    <p>{{ 'contact.hero.subtitle' | t }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-layout">
+    <div class="contact-details">
+      <h2 class="section-title">{{ 'contact.visit.title' | t }}</h2>
+      <p class="contact-lead">{{ 'contact.visit.desc' | t }}</p>
+
+      <dl class="contact-list">
+        <div class="contact-row">
+          <dt>{{ 'contact.phone.label' | t }}</dt>
+          <dd>
+            <a [href]="'tel:' + ('contact.phone.value' | t)">{{ 'contact.phone.value' | t }}</a>
+          </dd>
+        </div>
+
+        <div class="contact-row">
+          <dt>{{ 'contact.email.label' | t }}</dt>
+          <dd>
+            <a href="mailto:info@triofrostbake.com">info&#64;triofrostbake.com</a>
+            <a href="mailto:orders@triofrostbake.com">orders&#64;triofrostbake.com</a>
+          </dd>
+        </div>
+
+        <div class="contact-row">
+          <dt>{{ 'contact.hours.label' | t }}</dt>
+          <dd class="preline">{{ 'contact.hours.value' | t }}</dd>
+        </div>
+      </dl>
+
+      <h3 class="addresses-title">{{ 'contact.addresses.label' | t }}</h3>
+      <div class="address-list">
+        <div>
+          <p class="address-label">{{ 'contact.address.one.label' | t }}</p>
+          <p class="preline">{{ 'contact.address.one.value' | t }}</p>
+        </div>
+        <div>
+          <p class="address-label">{{ 'contact.address.two.label' | t }}</p>
+          <p class="preline">{{ 'contact.address.two.value' | t }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-map">
+      <iframe
+        title="Trio 95"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11982.992170274174!2d21.525748664776657!3d41.336091890899354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1356e94a0c1b7445%3A0xec9e6e8b196d03a5!2sTrio%2095!5e0!3m2!1sen!2smk!4v1790198123216!5m2!1sen!2smk"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>

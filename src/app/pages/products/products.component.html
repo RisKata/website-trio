@@ -1,0 +1,61 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>{{ 'products.hero.title' | t }}</h1>
+    <p>{{ 'products.hero.subtitle' | t }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="category-filter">
+      @for (category of categories; track category.id) {
+        <button
+          type="button"
+          class="category-btn"
+          [class.active]="selectedCategory === category.id"
+          (click)="selectCategory(category.id)"
+        >
+          {{ category.key | t }}
+        </button>
+      }
+    </div>
+
+    <div class="products-grid">
+      @for (product of filteredProducts; track product.id) {
+        <article class="product-card" appAnimateOnScroll>
+          <button type="button" class="product-image" (click)="openPreview(product)">
+            <img [src]="product.image" [alt]="product.nameKey | t" />
+          </button>
+          <span class="product-category">{{ product.categoryKey | t }}</span>
+          <h3>{{ product.nameKey | t }}</h3>
+          <p>{{ product.descKey | t }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section wholesale-banner">
+  <div class="container wholesale-inner" appAnimateOnScroll>
+    <div>
+      <h2>{{ 'products.wholesale.title' | t }}</h2>
+      <p>{{ 'products.wholesale.subtitle' | t }}</p>
+    </div>
+    <a routerLink="/contact" class="btn btn-primary">{{ 'products.wholesale.button' | t }}</a>
+  </div>
+</section>
+
+@if (preview) {
+  <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="preview.nameKey | t" (click)="closePreview()">
+    <div class="lightbox-panel" (click)="$event.stopPropagation()">
+      <button type="button" class="lightbox-close" (click)="closePreview()" [attr.aria-label]="'products.lightbox.close' | t">
+        ×
+      </button>
+      <img [src]="preview.image" [alt]="preview.nameKey | t" />
+      <div class="lightbox-caption">
+        <h3>{{ preview.nameKey | t }}</h3>
+        <p>{{ preview.descKey | t }}</p>
+      </div>
+    </div>
+  </div>
+}

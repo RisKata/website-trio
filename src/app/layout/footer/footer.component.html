@@ -1,0 +1,30 @@
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Trio 95" class="footer-logo" />
+      <p>{{ 'footer.tagline' | t }}</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>{{ 'footer.links' | t }}</h4>
+      <a routerLink="/">{{ 'nav.home' | t }}</a>
+      <a routerLink="/about">{{ 'nav.about' | t }}</a>
+      <a routerLink="/products">{{ 'nav.products' | t }}</a>
+      <a routerLink="/horeca">{{ 'nav.horeca' | t }}</a>
+      <a routerLink="/contact">{{ 'nav.contact' | t }}</a>
+    </div>
+
+    <div class="footer-contact">
+      <h4>{{ 'footer.factory' | t }}</h4>
+      <p class="preline"><strong>{{ 'contact.address.one.label' | t }}</strong><br />{{ 'contact.address.one.value' | t }}</p>
+      <p class="preline"><strong>{{ 'contact.address.two.label' | t }}</strong><br />{{ 'contact.address.two.value' | t }}</p>
+      <p>info&#64;triofrostbake.com<br />+389 2 123 4567</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {{ currentYear }} Trio 95. {{ 'footer.rights' | t }}</p>
+    </div>
+  </div>
+</footer>

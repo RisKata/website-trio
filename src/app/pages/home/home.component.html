@@ -1,0 +1,84 @@
+<section class="hero">
+  <div class="container hero-content">
+    <span class="hero-badge">{{ 'home.hero.badge' | t }}</span>
+    <h1>{{ 'home.hero.title' | t }}</h1>
+    <p>{{ 'home.hero.subtitle' | t }}</p>
+    <div class="hero-actions">
+      <a routerLink="/products" class="btn btn-primary">{{ 'home.hero.cta.products' | t }}</a>
+      <a routerLink="/about" class="btn btn-outline">{{ 'home.hero.cta.about' | t }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section features">
+  <div class="container">
+    <div appAnimateOnScroll>
+      <h2 class="section-title">{{ 'home.features.title' | t }}</h2>
+      <p class="section-subtitle">{{ 'home.features.subtitle' | t }}</p>
+    </div>
+    <div class="features-grid">
+      <article class="feature-card" appAnimateOnScroll>
+        <span class="feature-icon">🏭</span>
+        <h3>{{ 'home.features.factory.title' | t }}</h3>
+        <p>{{ 'home.features.factory.desc' | t }}</p>
+      </article>
+      <article class="feature-card stagger-1" appAnimateOnScroll>
+        <span class="feature-icon">❄️</span>
+        <h3>{{ 'home.features.frozen.title' | t }}</h3>
+        <p>{{ 'home.features.frozen.desc' | t }}</p>
+      </article>
+      <article class="feature-card stagger-2" appAnimateOnScroll>
+        <span class="feature-icon">⏱️</span>
+        <h3>{{ 'home.features.time.title' | t }}</h3>
+        <p>{{ 'home.features.time.desc' | t }}</p>
+      </article>
+      <article class="feature-card stagger-3" appAnimateOnScroll>
+        <span class="feature-icon">🌾</span>
+        <h3>{{ 'home.features.quality.title' | t }}</h3>
+        <p>{{ 'home.features.quality.desc' | t }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-banner">
+  <div class="container cta-inner" appAnimateOnScroll>
+    <div>
+      <h2>{{ 'home.cta.title' | t }}</h2>
+      <p>{{ 'home.cta.subtitle' | t }}</p>
+    </div>
+    <a routerLink="/products" class="btn btn-primary">{{ 'home.cta.button' | t }}</a>
+  </div>
+</section>
+
+<section class="section product-preview">
+  <div class="container">
+    <h2 class="section-title" appAnimateOnScroll>{{ 'home.preview.title' | t }}</h2>
+    <div class="preview-grid">
+      <article class="preview-card" appAnimateOnScroll>
+        <div class="preview-image">
+          <img src="products/IMG_0891.JPG" [alt]="'products.p1.name' | t" />
+        </div>
+        <h3>{{ 'products.p1.name' | t }}</h3>
+        <p>{{ 'products.p1.desc' | t }}</p>
+      </article>
+      <article class="preview-card stagger-1" appAnimateOnScroll>
+        <div class="preview-image">
+          <img src="products/IMG_7890.JPG" [alt]="'products.p3.name' | t" />
+        </div>
+        <h3>{{ 'products.p3.name' | t }}</h3>
+        <p>{{ 'products.p3.desc' | t }}</p>
+      </article>
+      <article class="preview-card stagger-2" appAnimateOnScroll>
+        <div class="preview-image">
+          <img src="products/IMG_9333.JPG" [alt]="'products.p9.name' | t" />
+        </div>
+        <h3>{{ 'products.p9.name' | t }}</h3>
+        <p>{{ 'products.p9.desc' | t }}</p>
+      </article>
+    </div>
+    <div class="preview-link">
+      <a routerLink="/products">{{ 'home.preview.link' | t }}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,240 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.35rem 0;
+  overflow: visible;
+  background: rgba(255, 246, 234, 0.62);
+  backdrop-filter: blur(22px) saturate(1.35);
+  -webkit-backdrop-filter: blur(22px) saturate(1.35);
+  border-bottom: 1px solid rgba(74, 44, 22, 0.12);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  min-height: 64px;
+  overflow: visible;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 64px;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  text-decoration: none;
+  margin-right: auto;
+  transition: opacity var(--transition);
+
+  &:hover {
+    opacity: 0.82;
+  }
+}
+
+.logo-img {
+  height: 92px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  margin-block: -14px;
+  pointer-events: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    left: 8px;
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--color-text);
+    transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+
+    &:nth-child(1) {
+      top: 13px;
+    }
+
+    &:nth-child(2) {
+      top: 19px;
+    }
+
+    &:nth-child(3) {
+      top: 25px;
+    }
+  }
+
+  &.open span:nth-child(1) {
+    top: 19px;
+    transform: rotate(45deg);
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    top: 19px;
+    transform: rotate(-45deg);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+
+  a {
+    position: relative;
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 0.45rem 0.7rem 0.55rem;
+    white-space: nowrap;
+    transition: color var(--transition);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0.7rem;
+      right: 0.7rem;
+      bottom: 0.2rem;
+      height: 2px;
+      background: var(--color-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    &:hover {
+      color: var(--color-text);
+    }
+
+    &:hover::after,
+    &.active::after {
+      transform: scaleX(1);
+    }
+
+    &.active {
+      color: var(--color-text);
+    }
+  }
+}
+
+.nav a.nav-cta {
+  margin-left: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 999px;
+
+  &::after {
+    display: none;
+  }
+
+  &:hover,
+  &.active {
+    color: var(--color-white);
+    background: var(--color-primary-dark);
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    padding: 0.35rem 0;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    min-height: 56px;
+  }
+
+  .logo {
+    height: 56px;
+    margin-right: 0;
+  }
+
+  .logo-img {
+    height: 76px;
+    margin-block: -10px;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border-top: 1px solid transparent;
+    transition: max-height 0.35s ease, opacity 0.25s ease, border-color 0.25s ease;
+
+    a {
+      width: 100%;
+      padding: 0.85rem 0.15rem;
+      border-bottom: 1px solid rgba(74, 44, 22, 0.1);
+
+      &::after {
+        display: none;
+      }
+
+      &.active {
+        color: var(--color-primary-dark);
+      }
+    }
+
+    a.nav-cta {
+      margin: 0.75rem 0 0.25rem;
+      width: auto;
+      align-self: flex-start;
+      border-bottom: none;
+    }
+
+    &.nav-open {
+      max-height: 420px;
+      opacity: 1;
+      border-top-color: rgba(74, 44, 22, 0.12);
+      padding-top: 0.25rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 68px;
+    margin-block: -6px;
+  }
+}

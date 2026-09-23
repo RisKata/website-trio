@@ -1,0 +1,31 @@
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.lang-btn {
+  padding: 0.2rem 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: color var(--transition);
+
+  & + & {
+    border-left: 1px solid rgba(74, 44, 22, 0.22);
+  }
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &.active {
+    color: var(--color-primary-dark);
+  }
+}

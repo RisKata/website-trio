@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="container header-inner">
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <img src="logo.png" alt="Trio 95" class="logo-img" />
+    </a>
+
+    <nav class="nav" [class.nav-open]="menuOpen">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'nav.home' | t }}</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.about' | t }}</a>
+      <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.products' | t }}</a>
+      <a routerLink="/horeca" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.horeca' | t }}</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-cta" (click)="closeMenu()">{{ 'nav.contact' | t }}</a>
+    </nav>
+
+    <div class="header-actions">
+      <app-language-switcher />
+
+      <button
+        class="menu-toggle"
+        type="button"
+        [class.open]="menuOpen"
+        [attr.aria-expanded]="menuOpen"
+        aria-label="Toggle navigation menu"
+        (click)="toggleMenu()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

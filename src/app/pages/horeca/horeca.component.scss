@@ -1,0 +1,238 @@
+.intro-inner {
+  max-width: 720px;
+}
+
+.intro-extra {
+  margin: -1.5rem 0 0;
+  color: var(--color-text);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.range-grid,
+.start-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.range-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(212, 196, 176, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.range-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-bg-warm);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.range-body {
+  padding: 1.5rem 1.5rem 1.75rem;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+}
+
+.range-link {
+  margin: 2rem 0 0;
+
+  a {
+    font-weight: 600;
+  }
+}
+
+.steps {
+  background: var(--color-bg-alt);
+}
+
+.steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.step {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--color-white);
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(212, 196, 176, 0.4);
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+}
+
+.step-num {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.start-card {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(212, 196, 176, 0.4);
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+}
+
+.start-num {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+@media (max-width: 860px) {
+  .range-grid,
+  .start-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefits {
+  background: var(--color-bg-alt);
+}
+
+.benefits-grid,
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card,
+.sector-card {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(212, 196, 176, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+}
+
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+.sector-card {
+  border-top: 4px solid var(--color-primary);
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 52%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+  }
+
+  p {
+    margin: 0;
+    opacity: 0.92;
+  }
+
+  .btn-primary {
+    background: var(--color-cream);
+    color: var(--color-primary-dark);
+    box-shadow: none;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-white);
+    color: var(--color-primary-dark);
+  }
+}
