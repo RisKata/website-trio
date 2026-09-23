@@ -1,5 +1,19 @@
 # FrozenFoodFactory
 
+Public site: [https://riskata.github.io/website-trio/](https://riskata.github.io/website-trio/)
+
+## Hosting on GitHub Pages
+
+The repo [RisKata/website-trio](https://github.com/RisKata/website-trio) must be **public**. GitHub Actions builds the Angular app on every push to `main` and publishes it with [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+One-time setup in the GitHub repo:
+
+1. **Settings → General → Danger Zone**: set visibility to Public, if it is still private.
+2. **Settings → Pages → Build and deployment**: set Source to **GitHub Actions**.
+3. Push `main`. The **Deploy to GitHub Pages** workflow publishes the site.
+
+Local `ng serve` keeps the base path `/`. Production builds use `/website-trio/` so assets and routes match the Pages URL. Direct links such as `/about` are restored by `public/404.html`.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.27.
 
 ## Development server

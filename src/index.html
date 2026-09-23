@@ -4,6 +4,16 @@
   <meta charset="utf-8">
   <title>Trio 95</title>
   <base href="/">
+  <script>
+    (function (location) {
+      if (location.search[1] === '/') {
+        var decoded = location.search.slice(1).split('&').map(function (part) {
+          return part.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, '', location.pathname.slice(0, -1) + decoded + location.hash);
+      }
+    }(window.location));
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Trio 95 — frozen dough, pastries, and baking products for bakeries and HoReCa.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
