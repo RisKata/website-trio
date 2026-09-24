@@ -1,0 +1,39 @@
+<section class="social-bar" [attr.aria-label]="'social.follow' | t">
+  <div class="container social-bar-inner">
+    <p class="social-bar-title">{{ 'social.follow' | t }}</p>
+    <ul class="social-links">
+      @for (link of links; track link.id) {
+        <li>
+          <a
+            class="social-link"
+            [class.social-link--facebook]="link.id === 'facebook'"
+            [class.social-link--instagram]="link.id === 'instagram'"
+            [class.social-link--youtube]="link.id === 'youtube'"
+            [href]="link.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="link.labelKey | t">
+            @switch (link.id) {
+              @case ('facebook') {
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14.5 8.5V6.8c0-.7.5-1.1 1.2-1.1H17V3h-2.1C12.2 3 11 4.4 11 6.6v1.9H9v2.7h2V21h3.5v-9.8h2.3l.4-2.7h-2.7z" />
+                </svg>
+              }
+              @case ('instagram') {
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zm0 1.8A3.2 3.2 0 0 0 4.8 8v8A3.2 3.2 0 0 0 8 19.2h8A3.2 3.2 0 0 0 19.2 16V8A3.2 3.2 0 0 0 16 4.8H8zm8.7 1.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2zm0 1.8A3 3 0 1 0 15 12a3 3 0 0 0-3-3z" />
+                </svg>
+              }
+              @case ('youtube') {
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.8 12 4.8 12 4.8s-5.8 0-7.6.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.4 7.6.4 7.6.4s5.8 0 7.6-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.8zM10.2 15.2V8.8L15.5 12l-5.3 3.2z" />
+                </svg>
+              }
+            }
+            <span>{{ link.labelKey | t }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

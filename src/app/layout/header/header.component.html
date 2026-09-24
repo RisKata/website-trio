@@ -1,8 +1,10 @@
-<header class="header">
+<ng-template #navBar let-showLogo="showLogo">
   <div class="container header-inner">
-    <a routerLink="/" class="logo" (click)="closeMenu()">
-      <img src="logo.png" alt="Trio 95" class="logo-img" />
-    </a>
+    @if (showLogo) {
+      <a routerLink="/" class="logo" (click)="closeMenu()">
+        <img src="logo.png" alt="Trio 95" class="logo-img" />
+      </a>
+    }
 
     <nav class="nav" [class.nav-open]="menuOpen">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'nav.home' | t }}</a>
@@ -13,6 +15,21 @@
     </nav>
 
     <div class="header-actions">
+      <button
+        type="button"
+        class="a11y-toggle"
+        [class.active]="a11y.mono()"
+        [attr.aria-pressed]="a11y.mono()"
+        [attr.aria-label]="a11yLabel() | t"
+        (click)="a11y.toggle()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
+          <circle cx="12" cy="7.2" r="1.35" fill="currentColor" />
+          <path d="M12 9.2v5.2M9.2 11.1h5.6M9.6 18.2l2.4-3.8 2.4 3.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
       <app-language-switcher />
 
       <button
@@ -29,4 +46,22 @@
       </button>
     </div>
   </div>
+</ng-template>
+
+<header
+  #mainHeader
+  class="header header-main"
+  [attr.inert]="scrolled ? '' : null"
+  [attr.aria-hidden]="scrolled ? true : null"
+>
+  <ng-container *ngTemplateOutlet="navBar; context: { showLogo: true }" />
+</header>
+
+<header
+  class="header header-dock"
+  [class.visible]="scrolled"
+  [attr.inert]="scrolled ? null : ''"
+  [attr.aria-hidden]="scrolled ? null : true"
+>
+  <ng-container *ngTemplateOutlet="navBar; context: { showLogo: false }" />
 </header>

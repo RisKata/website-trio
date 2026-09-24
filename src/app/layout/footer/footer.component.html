@@ -23,8 +23,9 @@
   </div>
 
   <div class="footer-bottom">
-    <div class="container">
+    <div class="container footer-bottom-inner">
       <p>&copy; {{ currentYear }} Trio 95. {{ 'footer.rights' | t }}</p>
+      <button type="button" class="cookie-settings" (click)="openCookieSettings()">{{ 'cookies.manage' | t }}</button>
     </div>
   </div>
 </footer>

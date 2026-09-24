@@ -1,0 +1,18 @@
+@if (consent.pending()) {
+  <div class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-body">
+    <div class="cookie-banner-inner">
+      <div class="cookie-copy">
+        <h2 id="cookie-title">{{ 'cookies.title' | t }}</h2>
+        <p id="cookie-body">{{ 'cookies.body' | t }}</p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline cookie-decline" (click)="decline()">
+          {{ 'cookies.decline' | t }}
+        </button>
+        <button type="button" class="btn btn-primary" (click)="accept()">
+          {{ 'cookies.accept' | t }}
+        </button>
+      </div>
+    </div>
+  </div>
+}

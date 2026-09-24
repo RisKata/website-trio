@@ -41,6 +41,32 @@
   </div>
 </section>
 
+<section class="section story-banner">
+  <div class="container story-banner-inner" appAnimateOnScroll>
+    <div class="story-video">
+      <iframe
+        [src]="videoUrl"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="story-copy">
+      <h2>Lorem ipsum dolor sit amet</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="section cta-banner">
   <div class="container cta-inner" appAnimateOnScroll>
     <div>
@@ -80,5 +106,43 @@
     <div class="preview-link">
       <a routerLink="/products">{{ 'home.preview.link' | t }}</a>
     </div>
+  </div>
+</section>
+
+<section class="section facebook-feed">
+  <div class="container facebook-inner">
+    <div class="facebook-copy" appAnimateOnScroll>
+      <h2 class="section-title">{{ 'home.facebook.title' | t }}</h2>
+      <p class="section-subtitle">{{ 'home.facebook.subtitle' | t }}</p>
+      @if (facebookFeedUrl()) {
+        <a class="btn btn-primary" [href]="facebookPage" target="_blank" rel="noopener noreferrer">
+          {{ 'home.facebook.link' | t }}
+        </a>
+      } @else {
+        <p class="facebook-consent">{{ 'home.facebook.consent' | t }}</p>
+        <div class="facebook-actions">
+          <button type="button" class="btn btn-primary" (click)="openCookieSettings()">
+            {{ 'cookies.manage' | t }}
+          </button>
+          <a class="facebook-page-link" [href]="facebookPage" target="_blank" rel="noopener noreferrer">
+            {{ 'home.facebook.link' | t }}
+          </a>
+        </div>
+      }
+    </div>
+
+    @if (facebookFeedUrl(); as feedUrl) {
+      <div class="facebook-frame" appAnimateOnScroll>
+        <iframe
+          [src]="feedUrl"
+          title="Trio 95 Facebook"
+          width="500"
+          height="560"
+          scrolling="no"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    }
   </div>
 </section>

@@ -5,6 +5,23 @@
   <title>Trio 95</title>
   <base href="/">
   <script>
+    try {
+      var cookie = function (name) {
+        var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+        return match ? decodeURIComponent(match[1]) : null;
+      };
+      if (cookie('trio-consent') === 'accepted.2') {
+        var lang = cookie('trio-lang');
+        if (lang === 'en' || lang === 'mk' || lang === 'sq') {
+          document.documentElement.lang = lang;
+        }
+        if (cookie('trio-a11y-bw') === '1') {
+          document.documentElement.classList.add('a11y-bw');
+        }
+      }
+    } catch (e) {}
+  </script>
+  <script>
     (function (location) {
       if (location.search[1] === '/') {
         var decoded = location.search.slice(1).split('&').map(function (part) {
@@ -16,7 +33,7 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Trio 95 — frozen dough, pastries, and baking products for bakeries and HoReCa.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/logo.png" />
 </head>
 <body>
   <app-root></app-root>

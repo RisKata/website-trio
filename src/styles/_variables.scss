@@ -1,0 +1,24 @@
+// Palette source of truth. styles.scss publishes these as CSS variables,
+// so components use var(--color-...) and a change here updates the site.
+
+$color-primary: #C56A21;
+$color-primary-dark: #8C3F12;
+$color-primary-light: #E08934;
+$color-accent: #F0B85A;
+
+$color-bg: #FFF5E8;
+$color-bg-alt: #F8E4C4;
+$color-bg-warm: #F2D4A6;
+$color-beige-dark: #E3C08A;
+$color-white: #FFFAF2;
+$color-cream: #FFF6EA;
+
+$color-text: #4A2C16;
+$color-text-muted: #8A6240;
+
+// Shared dark surface: top navigation and footer.
+$color-surface-dark: #3A342E;
+$color-surface-dark-rgb: 58, 52, 46;
+$color-surface-dark-alpha: 0.82;
+$color-on-dark: #fff6ea;
+$color-on-dark-muted: rgba(255, 246, 234, 0.84);

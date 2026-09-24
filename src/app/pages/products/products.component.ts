@@ -13,6 +13,11 @@ interface Product {
   image: string;
 }
 
+interface CategoryTile {
+  id: string;
+  key: TranslationKey;
+}
+
 @Component({
   selector: 'app-products',
   imports: [RouterLink, TranslatePipe, AnimateOnScrollDirective],
@@ -23,8 +28,7 @@ export class ProductsComponent implements OnDestroy {
   selectedCategory = 'All';
   preview: Product | null = null;
 
-  categories: { id: string; key: TranslationKey }[] = [
-    { id: 'All', key: 'products.category.all' },
+  categories: CategoryTile[] = [
     { id: 'Puff', key: 'products.category.puff' },
     { id: 'Dough', key: 'products.category.dough' },
     { id: 'Fry', key: 'products.category.fry' }
@@ -50,7 +54,7 @@ export class ProductsComponent implements OnDestroy {
   }
 
   selectCategory(category: string): void {
-    this.selectedCategory = category;
+    this.selectedCategory = category === 'All' || this.selectedCategory === category ? 'All' : category;
   }
 
   openPreview(product: Product): void {

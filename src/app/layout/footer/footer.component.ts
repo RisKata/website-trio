@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ConsentService } from '../../core/consent/consent.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 @Component({
@@ -9,5 +10,10 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  private readonly consent = inject(ConsentService);
   currentYear = new Date().getFullYear();
+
+  openCookieSettings(): void {
+    this.consent.reopen();
+  }
 }

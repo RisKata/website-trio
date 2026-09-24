@@ -5,20 +5,30 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section catalog">
   <div class="container">
-    <div class="category-filter">
+    <nav class="category-index" [attr.aria-label]="'products.range.label' | t">
+      <button
+        type="button"
+        class="category-link"
+        [class.active]="selectedCategory === 'All'"
+        [attr.aria-pressed]="selectedCategory === 'All'"
+        (click)="selectCategory('All')"
+      >
+        {{ 'products.category.all' | t }}
+      </button>
       @for (category of categories; track category.id) {
         <button
           type="button"
-          class="category-btn"
+          class="category-link"
           [class.active]="selectedCategory === category.id"
+          [attr.aria-pressed]="selectedCategory === category.id"
           (click)="selectCategory(category.id)"
         >
           {{ category.key | t }}
         </button>
       }
-    </div>
+    </nav>
 
     <div class="products-grid">
       @for (product of filteredProducts; track product.id) {

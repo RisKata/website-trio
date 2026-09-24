@@ -1,0 +1,83 @@
+.social-bar {
+  background: var(--color-bg-alt);
+  border-top: 1px solid rgba(140, 63, 18, 0.08);
+}
+
+.social-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.social-bar-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.9rem 0.55rem 0.65rem;
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition);
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+    flex-shrink: 0;
+    transition: fill var(--transition);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    color: var(--color-text);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.social-link--facebook:hover svg {
+  fill: #1877f2;
+}
+
+.social-link--instagram:hover svg {
+  fill: #c13584;
+}
+
+.social-link--youtube:hover svg {
+  fill: #ff0000;
+}
+
+@media (max-width: 640px) {
+  .social-bar-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -17,6 +17,8 @@ export const translations = {
     'nav.products': 'Products',
     'nav.horeca': 'HoReCa',
     'nav.contact': 'Contact',
+    'a11y.enable': 'Switch to black and white',
+    'a11y.disable': 'Switch back to color',
 
     'home.hero.badge': 'Frozen · Ready to Bake · Delicious',
     'home.hero.title': 'Fresh-from-the-oven taste, straight from our freezer',
@@ -70,6 +72,7 @@ export const translations = {
     'products.hero.title': 'Our Products',
     'products.hero.subtitle': 'Puff pastries in many tastes, pastry dough, and products made for the fryer.',
     'products.category.all': 'All',
+    'products.range.label': 'Browse by range',
     'products.category.puff': 'Puff pastries',
     'products.category.dough': 'Dough',
     'products.category.fry': 'For frying',
@@ -165,7 +168,23 @@ export const translations = {
     'footer.tagline': 'Premium frozen baking products for bakeries, cafés, and professional kitchens.',
     'footer.links': 'Quick Links',
     'footer.factory': 'Factory',
-    'footer.rights': 'All rights reserved.'
+    'footer.rights': 'All rights reserved.',
+
+    'cookies.title': 'Cookie policy',
+    'cookies.body': 'If you accept, we store your language and black-and-white display on this device, we measure visits with Google Analytics, and we load recent posts from our Facebook page. We do not use these cookies for advertising. If you decline, none of that is stored and the Facebook feed stays hidden.',
+    'cookies.accept': 'Accept',
+    'cookies.decline': 'Decline',
+    'cookies.manage': 'Cookie settings',
+
+    'home.facebook.title': 'Latest from Facebook',
+    'home.facebook.subtitle': 'Recent posts from the Trio 95 page.',
+    'home.facebook.consent': 'Accept cookies to load the latest posts from our Facebook page. You can still open the page directly.',
+    'home.facebook.link': 'Open Facebook',
+
+    'social.follow': 'Follow us',
+    'social.facebook': 'Facebook',
+    'social.instagram': 'Instagram',
+    'social.youtube': 'YouTube'
   },
   mk: {
     'nav.home': 'Почетна',
@@ -173,6 +192,8 @@ export const translations = {
     'nav.products': 'Производи',
     'nav.horeca': 'HoReCa',
     'nav.contact': 'Контакт',
+    'a11y.enable': 'Вклучи црно-бел приказ',
+    'a11y.disable': 'Врати приказ во боја',
     
     'home.hero.badge': 'Замрзнато · Подготвено за печење · Неодоливо вкусно',
 'home.hero.title': 'Вкус и мирис како штотуку извадено од рерна',
@@ -226,6 +247,7 @@ export const translations = {
 'products.hero.title': 'Нашите производи',
 'products.hero.subtitle': 'Лиснати печива во многу вкусови, теста и производи подготвени за пржење.',
 'products.category.all': 'Сите',
+'products.range.label': 'Разгледај по асортиман',
 'products.category.puff': 'Лиснати печива',
 'products.category.dough': 'Тесто',
 'products.category.fry': 'За пржење',
@@ -325,6 +347,22 @@ export const translations = {
 'footer.factory': 'Фабрика',
 'footer.rights': 'Сите права се задржани.',
 
+'cookies.title': 'Политика за колачиња',
+'cookies.body': 'Ако прифатите, го зачувуваме јазикот и црно-белиот приказ на овој уред, ги мериме посетите со Google Analytics и ги вчитуваме скорешните објави од нашата Facebook страница. Овие колачиња не ги користиме за реклами. Ако одбиете, ништо од тоа не се зачувува и вестите од Facebook остануваат скриени.',
+'cookies.accept': 'Прифати',
+'cookies.decline': 'Одбиј',
+'cookies.manage': 'Поставки за колачиња',
+
+'home.facebook.title': 'Последно од Facebook',
+'home.facebook.subtitle': 'Скорешни објави од страницата на Trio 95.',
+'home.facebook.consent': 'Прифатете ги колачињата за да се вчитаат последните објави од нашата Facebook страница. Страницата можете да ја отворите и директно.',
+'home.facebook.link': 'Отвори Facebook',
+
+'social.follow': 'Следете нè',
+'social.facebook': 'Facebook',
+'social.instagram': 'Instagram',
+'social.youtube': 'YouTube'
+
 
   },
   sq: {
@@ -333,6 +371,8 @@ export const translations = {
     'nav.products': 'Produktet',
     'nav.horeca': 'HoReCa',
     'nav.contact': 'Kontakt',
+    'a11y.enable': 'Aktivizo pamjen bardh e zi',
+    'a11y.disable': 'Kthe pamjen me ngjyra',
     
     'home.hero.badge': 'E ngrirë · Gati për pjekje · Shije e parezistueshme',
 'home.hero.title': 'Shije dhe aromë si sapo të jetë nxjerrë nga furra',
@@ -386,6 +426,7 @@ export const translations = {
 'products.hero.title': 'Produktet tona',
 'products.hero.subtitle': 'Petë sfoliate në shije të ndryshme, brumë dhe produkte të përgatitura për tiganisje.',
 'products.category.all': 'Të gjitha',
+'products.range.label': 'Shfleto sipas gamës',
 'products.category.puff': 'Petë sfoliate',
 'products.category.dough': 'Brumë',
 'products.category.fry': 'Për tiganisje',
@@ -484,8 +525,24 @@ export const translations = {
 'footer.factory': 'Fabrika',
 'footer.rights': 'Të gjitha të drejtat e rezervuara.',
 
+'cookies.title': 'Politika e cookies',
+'cookies.body': 'Nëse pranoni, ruajmë gjuhën dhe pamjen bardh e zi në këtë pajisje, i masim vizitat me Google Analytics dhe ngarkojmë postimet e fundit nga faqja jonë në Facebook. Nuk i përdorim këto cookies për reklama. Nëse refuzoni, asgjë nga këto nuk ruhet dhe furnizimi i Facebook mbetet i fshehur.',
+'cookies.accept': 'Prano',
+'cookies.decline': 'Refuzo',
+'cookies.manage': 'Cilësimet e cookies',
+
+'home.facebook.title': 'Të fundit nga Facebook',
+'home.facebook.subtitle': 'Postimet e fundit nga faqja e Trio 95.',
+'home.facebook.consent': 'Pranoni cookies që të ngarkohen postimet e fundit nga faqja jonë në Facebook. Faqen mund ta hapni edhe drejtpërdrejt.',
+'home.facebook.link': 'Hap Facebook',
+
+'social.follow': 'Na ndiqni',
+'social.facebook': 'Facebook',
+'social.instagram': 'Instagram',
+'social.youtube': 'YouTube'
+
   }
 } as const;
 
-export type TranslationKey = keyof typeof translations.en;
+export type TranslationKey = keyof (typeof translations)['en'];
 
