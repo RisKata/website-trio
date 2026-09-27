@@ -119,6 +119,14 @@ img {
   padding: 0 1.5rem;
 }
 
+@media (max-width: 1200px) {
+  .main-content .container,
+  .social-bar .container,
+  .footer .container {
+    padding-right: 4.75rem;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -287,7 +295,8 @@ html.a11y-bw .header-inner,
 html.a11y-bw .main-content section,
 html.a11y-bw .lightbox,
 html.a11y-bw .social-bar,
-html.a11y-bw .footer {
+html.a11y-bw .footer,
+html.a11y-bw .scroll-top {
   filter: grayscale(1);
 }
 
@@ -296,7 +305,7 @@ html.a11y-bw *::-webkit-scrollbar-thumb {
   border-color: #fff;
 }
 
-html.a11y-bw a:not(.logo) {
+html.a11y-bw a:not(.logo):not(.product-card):not(.preview-card) {
   text-decoration: underline !important;
   text-underline-offset: 0.15em;
 }

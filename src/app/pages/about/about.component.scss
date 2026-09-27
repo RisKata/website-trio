@@ -36,6 +36,11 @@
   font-variant-numeric: tabular-nums;
 }
 
+.stat-number-static {
+  font-size: 2rem;
+  font-variant-numeric: normal;
+}
+
 .stat-label {
   font-size: 0.9rem;
   color: var(--color-text-muted);

@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { ConsentService } from '../../core/consent/consent.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { TranslationService } from '../../core/i18n/translation.service';
+import { featuredProducts } from '../../core/products/catalog';
 import { AnimateOnScrollDirective } from '../../shared/animate-on-scroll.directive';
 
 @Component({
@@ -18,6 +19,7 @@ export class HomeComponent {
   private readonly i18n = inject(TranslationService);
 
   readonly facebookPage = 'https://www.facebook.com/TRIO95DOO/';
+  readonly featured = featuredProducts;
 
   /** Temporary visualization clip; swap the id when the final film is ready. */
   readonly videoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(

@@ -57,21 +57,6 @@
     }
   }
 
-  .a11y-toggle {
-    color: var(--color-on-dark-muted);
-    border-color: rgba(255, 246, 234, 0.4);
-
-    &:hover,
-    &.active {
-      color: #fff;
-      border-color: #fff;
-    }
-
-    &.active {
-      background: rgba(255, 246, 234, 0.12);
-    }
-  }
-
   .menu-toggle span {
     background: var(--color-on-dark);
   }
@@ -135,33 +120,33 @@
 }
 
 .a11y-toggle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 115;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   padding: 0;
-  color: var(--color-text-muted);
-  background: transparent;
-  border: 1px solid rgba(74, 44, 22, 0.22);
-  border-radius: 999px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: 10px 0 0 10px;
   cursor: pointer;
-  transition: color var(--transition), background var(--transition), border-color var(--transition);
+  transform: translateY(-50%);
+  transition: background var(--transition);
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 26px;
+    height: 26px;
     display: block;
   }
 
   &:hover,
   &.active {
-    color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
-  }
-
-  &.active {
-    background: rgba(74, 44, 22, 0.08);
+    background: var(--color-primary-dark);
   }
 
   &:focus-visible {

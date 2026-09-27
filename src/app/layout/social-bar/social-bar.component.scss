@@ -70,6 +70,12 @@
   fill: #ff0000;
 }
 
+@media (max-width: 1200px) {
+  .social-bar-inner {
+    padding-right: 4.75rem;
+  }
+}
+
 @media (max-width: 640px) {
   .social-bar-inner {
     flex-direction: column;

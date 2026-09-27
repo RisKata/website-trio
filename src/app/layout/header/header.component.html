@@ -15,21 +15,6 @@
     </nav>
 
     <div class="header-actions">
-      <button
-        type="button"
-        class="a11y-toggle"
-        [class.active]="a11y.mono()"
-        [attr.aria-pressed]="a11y.mono()"
-        [attr.aria-label]="a11yLabel() | t"
-        (click)="a11y.toggle()"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
-          <circle cx="12" cy="7.2" r="1.35" fill="currentColor" />
-          <path d="M12 9.2v5.2M9.2 11.1h5.6M9.6 18.2l2.4-3.8 2.4 3.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
-
       <app-language-switcher />
 
       <button
@@ -65,3 +50,17 @@
 >
   <ng-container *ngTemplateOutlet="navBar; context: { showLogo: false }" />
 </header>
+
+<button
+  type="button"
+  class="a11y-toggle"
+  [class.active]="a11y.mono()"
+  [attr.aria-pressed]="a11y.mono()"
+  [attr.aria-label]="a11yLabel() | t"
+  (click)="a11y.toggle()"
+>
+  <svg viewBox="7.6 5 9 14.6" aria-hidden="true">
+    <circle cx="12" cy="7.2" r="1.35" fill="currentColor" />
+    <path d="M12 9.2v5.2M9.2 11.1h5.6M9.6 18.2l2.4-3.8 2.4 3.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>

@@ -32,14 +32,14 @@
 
     <div class="products-grid">
       @for (product of filteredProducts; track product.id) {
-        <article class="product-card" appAnimateOnScroll>
-          <button type="button" class="product-image" (click)="openPreview(product)">
-            <img [src]="product.image" [alt]="product.nameKey | t" />
-          </button>
+        <a class="product-card" appAnimateOnScroll [routerLink]="['/products', product.id]">
+          <span class="product-image">
+            <img [src]="product.images[0]" [alt]="product.nameKey | t" />
+          </span>
           <span class="product-category">{{ product.categoryKey | t }}</span>
           <h3>{{ product.nameKey | t }}</h3>
           <p>{{ product.descKey | t }}</p>
-        </article>
+        </a>
       }
     </div>
   </div>
@@ -55,17 +55,3 @@
   </div>
 </section>
 
-@if (preview) {
-  <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="preview.nameKey | t" (click)="closePreview()">
-    <div class="lightbox-panel" (click)="$event.stopPropagation()">
-      <button type="button" class="lightbox-close" (click)="closePreview()" [attr.aria-label]="'products.lightbox.close' | t">
-        ×
-      </button>
-      <img [src]="preview.image" [alt]="preview.nameKey | t" />
-      <div class="lightbox-caption">
-        <h3>{{ preview.nameKey | t }}</h3>
-        <p>{{ preview.descKey | t }}</p>
-      </div>
-    </div>
-  </div>
-}

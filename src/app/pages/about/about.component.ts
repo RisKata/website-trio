@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, computed, inject } from '@angular/core';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
+import { TranslationService } from '../../core/i18n/translation.service';
 import { AnimateOnScrollDirective } from '../../shared/animate-on-scroll.directive';
 
 @Component({
@@ -10,11 +11,12 @@ import { AnimateOnScrollDirective } from '../../shared/animate-on-scroll.directi
 })
 export class AboutComponent implements AfterViewInit, OnDestroy {
   private readonly host = inject(ElementRef<HTMLElement>);
+  private readonly i18n = inject(TranslationService);
+  readonly sinceLabel = computed(() => this.i18n.t('about.stats.since'));
   private observer?: IntersectionObserver;
   private frame?: number;
 
   readonly stats = [
-    { target: 35, value: 0 },
     { target: 50, value: 0 },
     { target: 200, value: 0 }
   ];

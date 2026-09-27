@@ -18,22 +18,18 @@
     </div>
     <div class="features-grid">
       <article class="feature-card" appAnimateOnScroll>
-        <span class="feature-icon">🏭</span>
         <h3>{{ 'home.features.factory.title' | t }}</h3>
         <p>{{ 'home.features.factory.desc' | t }}</p>
       </article>
       <article class="feature-card stagger-1" appAnimateOnScroll>
-        <span class="feature-icon">❄️</span>
         <h3>{{ 'home.features.frozen.title' | t }}</h3>
         <p>{{ 'home.features.frozen.desc' | t }}</p>
       </article>
       <article class="feature-card stagger-2" appAnimateOnScroll>
-        <span class="feature-icon">⏱️</span>
         <h3>{{ 'home.features.time.title' | t }}</h3>
         <p>{{ 'home.features.time.desc' | t }}</p>
       </article>
       <article class="feature-card stagger-3" appAnimateOnScroll>
-        <span class="feature-icon">🌾</span>
         <h3>{{ 'home.features.quality.title' | t }}</h3>
         <p>{{ 'home.features.quality.desc' | t }}</p>
       </article>
@@ -81,27 +77,21 @@
   <div class="container">
     <h2 class="section-title" appAnimateOnScroll>{{ 'home.preview.title' | t }}</h2>
     <div class="preview-grid">
-      <article class="preview-card" appAnimateOnScroll>
-        <div class="preview-image">
-          <img src="products/IMG_0891.JPG" [alt]="'products.p1.name' | t" />
-        </div>
-        <h3>{{ 'products.p1.name' | t }}</h3>
-        <p>{{ 'products.p1.desc' | t }}</p>
-      </article>
-      <article class="preview-card stagger-1" appAnimateOnScroll>
-        <div class="preview-image">
-          <img src="products/IMG_7890.JPG" [alt]="'products.p3.name' | t" />
-        </div>
-        <h3>{{ 'products.p3.name' | t }}</h3>
-        <p>{{ 'products.p3.desc' | t }}</p>
-      </article>
-      <article class="preview-card stagger-2" appAnimateOnScroll>
-        <div class="preview-image">
-          <img src="products/IMG_9333.JPG" [alt]="'products.p9.name' | t" />
-        </div>
-        <h3>{{ 'products.p9.name' | t }}</h3>
-        <p>{{ 'products.p9.desc' | t }}</p>
-      </article>
+      @for (product of featured; track product.id; let index = $index) {
+        <a
+          class="preview-card"
+          [class.stagger-1]="index === 1"
+          [class.stagger-2]="index === 2"
+          appAnimateOnScroll
+          [routerLink]="['/products', product.id]"
+        >
+          <div class="preview-image">
+            <img [src]="product.images[0]" [alt]="product.nameKey | t" />
+          </div>
+          <h3>{{ product.nameKey | t }}</h3>
+          <p>{{ product.descKey | t }}</p>
+        </a>
+      }
     </div>
     <div class="preview-link">
       <a routerLink="/products">{{ 'home.preview.link' | t }}</a>

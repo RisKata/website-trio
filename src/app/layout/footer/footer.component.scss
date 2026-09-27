@@ -92,6 +92,13 @@
   color: var(--color-beige-dark);
 }
 
+@media (max-width: 1200px) {
+  .footer-grid,
+  .footer-bottom-inner {
+    padding-right: 4.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
