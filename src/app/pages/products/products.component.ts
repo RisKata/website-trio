@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { products, Product } from '../../core/products/catalog';
-import { AnimateOnScrollDirective } from '../../shared/animate-on-scroll.directive';
 import { TranslationKey } from '../../core/i18n/translations';
+import { AnimateOnScrollDirective } from '../../shared/animate-on-scroll.directive';
 
 interface CategoryTile {
   id: string;

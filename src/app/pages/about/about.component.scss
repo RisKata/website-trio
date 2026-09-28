@@ -86,20 +86,17 @@
 
 .factory-inner {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(240px, 420px) 1fr;
   gap: 3rem;
   align-items: center;
 }
 
 .factory-visual {
-  width: 180px;
-  height: 180px;
-  background: var(--color-bg-alt);
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .factory-inner p {
@@ -126,6 +123,6 @@
   }
 
   .factory-visual {
-    margin: 0 auto;
+    max-width: 420px;
   }
 }

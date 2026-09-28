@@ -12,12 +12,12 @@
 }
 
 .footer-logo {
-  height: 48px;
+  display: block;
+  height: 96px;
   width: auto;
   margin-bottom: 1rem;
-  background: var(--color-cream);
-  padding: 0.35rem 0.5rem;
-  border-radius: 8px;
+  background: transparent;
+  object-fit: contain;
 }
 
 .footer-brand p {

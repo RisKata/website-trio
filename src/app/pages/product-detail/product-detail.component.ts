@@ -6,12 +6,13 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { TranslationService } from '../../core/i18n/translation.service';
-import { findProduct, Product } from '../../core/products/catalog';
+import { Allergen, Diet, findProduct, Product } from '../../core/products/catalog';
 import { TranslationKey } from '../../core/i18n/translations';
+import { MarkIconComponent } from './mark-icon.component';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [RouterLink, TranslatePipe],
+  imports: [RouterLink, TranslatePipe, MarkIconComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })
@@ -54,6 +55,30 @@ export class ProductDetailComponent implements OnDestroy {
   titleFor(product: Product): TranslationKey {
     const flavor = product.flavors?.[this.flavorIndex()];
     return flavor?.titleKey ?? product.nameKey;
+  }
+
+  dietFor(product: Product): Diet {
+    const flavor = product.flavors?.[this.flavorIndex()];
+    return flavor?.diet ?? product.diet;
+  }
+
+  allergensFor(product: Product): Allergen[] {
+    const flavor = product.flavors?.[this.flavorIndex()];
+    return flavor?.allergens ?? product.allergens;
+  }
+
+  dietLabel(diet: Exclude<Diet, 'none'>): TranslationKey {
+    return diet === 'vegan' ? 'products.diet.vegan' : 'products.diet.vegetarian';
+  }
+
+  allergenLabel(allergen: Allergen): TranslationKey {
+    if (allergen === 'milk') {
+      return 'products.allergen.milk';
+    }
+    if (allergen === 'soy') {
+      return 'products.allergen.soy';
+    }
+    return 'products.allergen.gluten';
   }
 
   selectImage(index: number): void {

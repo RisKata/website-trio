@@ -61,12 +61,13 @@
     background: var(--color-on-dark);
   }
 
-  ::ng-deep .lang-btn + .lang-btn {
-    border-left-color: rgba(255, 246, 234, 0.35);
-  }
+  ::ng-deep .lang-trigger {
+    color: var(--color-on-dark);
 
-  ::ng-deep .lang-btn.active {
-    color: var(--color-accent);
+    &:hover,
+    &[aria-expanded='true'] {
+      color: var(--color-accent);
+    }
   }
 
   &.visible {
@@ -107,6 +108,8 @@
   max-width: none;
   object-fit: contain;
   margin-block: -14px;
+  // Source art has more transparent space above the oval than below it.
+  transform: translateY(-4.2%);
   pointer-events: none;
 }
 

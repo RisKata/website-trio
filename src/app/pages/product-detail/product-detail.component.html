@@ -10,9 +10,21 @@
 
       <div class="detail-layout">
         <div class="gallery">
-          <button type="button" class="gallery-stage" (click)="openImage()" [attr.aria-label]="'products.gallery.enlarge' | t">
-            <img [src]="currentImage" [alt]="titleKey | t" />
-          </button>
+          <div class="gallery-frame">
+            <button type="button" class="gallery-stage" (click)="openImage()" [attr.aria-label]="'products.gallery.enlarge' | t">
+              <img [src]="currentImage" [alt]="titleKey | t" />
+            </button>
+            @if (dietFor(item); as diet) {
+              @if (diet !== 'none') {
+                <span class="diet-tag" [class.vegetarian]="diet === 'vegetarian'" [class.vegan]="diet === 'vegan'">
+                  <span class="mark-glyph">
+                    <app-mark-icon [name]="diet" />
+                  </span>
+                  <span>{{ dietLabel(diet) | t }}</span>
+                </span>
+              }
+            }
+          </div>
           @if (images.length) {
             <div class="gallery-thumbs" role="group" [attr.aria-label]="'products.gallery.label' | t">
               @for (image of images; track image; let index = $index) {
@@ -29,11 +41,31 @@
               }
             </div>
           }
+
         </div>
 
         <div class="detail-copy">
           <span class="product-category">{{ item.categoryKey | t }}</span>
           <h1>{{ titleKey | t }}</h1>
+
+          @if (item.flavors?.length) {
+            <section class="flavors" [attr.aria-label]="'products.flavors.title' | t">
+              <h2>{{ 'products.flavors.title' | t }}</h2>
+              <div class="flavor-list" role="group" [attr.aria-label]="'products.flavors.title' | t">
+                @for (flavor of item.flavors; track flavor.id; let index = $index) {
+                  <button
+                    type="button"
+                    class="flavor"
+                    [class.active]="flavorIndex() === index"
+                    [attr.aria-pressed]="flavorIndex() === index"
+                    (click)="selectFlavor(index)"
+                  >
+                    {{ flavor.nameKey | t }}
+                  </button>
+                }
+              </div>
+            </section>
+          }
 
           <h2>{{ 'products.details.description' | t }}</h2>
           <p>{{ (flavor?.descKey ?? item.descKey) | t }}</p>
@@ -41,31 +73,30 @@
           <h2>{{ 'products.details.ingredients' | t }}</h2>
           <p>{{ (flavor?.ingredientsKey ?? item.ingredientsKey) | t }}</p>
 
-          <h2>{{ 'products.details.weight' | t }}</h2>
-          <p class="pack-weight">{{ (flavor?.weightKey ?? item.weightKey) | t }}</p>
+          <h2>{{ 'products.details.preparation' | t }}</h2>
+          <p>{{ (flavor?.preparationKey ?? item.preparationKey) | t }}</p>
 
-          <a routerLink="/contact" class="btn btn-primary">{{ 'products.wholesale.button' | t }}</a>
+          <h2>{{ 'products.details.nutrition' | t }}</h2>
+          <p class="nutrition">{{ (flavor?.nutritionKey ?? item.nutritionKey) | t }}</p>
+
+          <h2>{{ 'products.details.weight' | t }}</h2>
+          <p>{{ (flavor?.weightKey ?? item.weightKey) | t }}</p>
+
+          <section class="allergens">
+            <h2>{{ 'products.details.allergens' | t }}</h2>
+            <ul class="allergen-list">
+              @for (allergen of allergensFor(item); track allergen) {
+                <li>
+                  <span class="mark-glyph">
+                    <app-mark-icon [name]="allergen" />
+                  </span>
+                  <span>{{ allergenLabel(allergen) | t }}</span>
+                </li>
+              }
+            </ul>
+          </section>
         </div>
       </div>
-
-      @if (item.flavors?.length) {
-        <section class="flavors" [attr.aria-label]="'products.flavors.title' | t">
-          <h2>{{ 'products.flavors.title' | t }}</h2>
-          <div class="flavor-list" role="group" [attr.aria-label]="'products.flavors.title' | t">
-            @for (flavor of item.flavors; track flavor.id; let index = $index) {
-              <button
-                type="button"
-                class="flavor"
-                [class.active]="flavorIndex() === index"
-                [attr.aria-pressed]="flavorIndex() === index"
-                (click)="selectFlavor(index)"
-              >
-                {{ flavor.nameKey | t }}
-              </button>
-            }
-          </div>
-        </section>
-      }
 
       @if (enlarged()) {
         <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="titleKey | t" (click)="closeImage()">

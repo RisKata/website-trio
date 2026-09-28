@@ -21,6 +21,45 @@
   align-items: start;
 }
 
+.gallery-frame {
+  position: relative;
+}
+
+.diet-tag {
+  position: absolute;
+  top: 0.75rem;
+  right: 0;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  padding: 0.28rem 0.7rem 0.28rem 0.28rem;
+  border-radius: 999px 0 0 999px;
+  pointer-events: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+
+  &.vegetarian {
+    background: #ffed00;
+    color: #3a2a14;
+  }
+
+  &.vegan {
+    background: #007d34;
+    color: #fff6d8;
+  }
+
+  .mark-glyph {
+    width: 28px;
+    height: 28px;
+    flex: none;
+  }
+}
+
 .gallery-stage {
   display: block;
   width: 100%;
@@ -83,7 +122,7 @@
   h1 {
     font-size: clamp(2rem, 4vw, 2.75rem);
     color: var(--color-text);
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
   }
 
   h2 {
@@ -97,6 +136,8 @@
 
   p {
     margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
     color: var(--color-text-muted);
     line-height: 1.75;
   }
@@ -115,28 +156,40 @@
   margin-bottom: 0.85rem;
 }
 
-.pack-weight {
-  font-size: 1.15rem;
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-.detail-copy .btn {
-  margin-top: 2rem;
+.nutrition {
+  white-space: pre-line;
 }
 
 .flavors {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-beige-dark);
+  margin: 0 0 0.35rem;
 
   h2 {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-primary-dark);
-    margin: 0 0 1rem;
+    margin-top: 0;
+  }
+}
+
+.allergen-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.35rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .mark-glyph {
+    width: 42px;
+    height: 42px;
+    flex: none;
   }
 }
 

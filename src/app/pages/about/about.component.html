@@ -50,7 +50,12 @@
 
 <section class="section factory-section">
   <div class="container factory-inner">
-    <div class="factory-visual" appAnimateOnScroll aria-hidden="true">🏭</div>
+    <img
+      class="factory-visual"
+      appAnimateOnScroll
+      src="trio-building.png"
+      [alt]="'about.factory.title' | t"
+    />
     <div appAnimateOnScroll>
       <h2 class="section-title">{{ 'about.factory.title' | t }}</h2>
       <p>{{ 'about.factory.desc' | t }}</p>
