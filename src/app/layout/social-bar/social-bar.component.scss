@@ -76,6 +76,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .social-bar-inner {
+    padding-right: 1.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .social-bar-inner {
     flex-direction: column;

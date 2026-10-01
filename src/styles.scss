@@ -35,7 +35,9 @@
 
 @media (max-width: 960px) {
   :root {
-    --header-offset: 4.5rem;
+    /* Matches the real mobile header height so the hero photo meets the screen edge. */
+    --header-offset: 5rem;
+    --nav-gap: 0rem;
   }
 }
 
@@ -49,6 +51,12 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) transparent;
+}
+
+html.menu-scroll-lock,
+html.menu-scroll-lock body {
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 *::-webkit-scrollbar {
@@ -124,6 +132,14 @@ img {
   .social-bar .container,
   .footer .container {
     padding-right: 4.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content .container,
+  .social-bar .container,
+  .footer .container {
+    padding-right: 1.5rem;
   }
 }
 

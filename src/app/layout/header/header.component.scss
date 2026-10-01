@@ -343,6 +343,124 @@
       padding-top: 0.25rem;
     }
   }
+
+  .header.menu-open {
+    position: fixed;
+    inset: 0;
+    z-index: 250;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: none;
+    box-shadow: none;
+    background:
+      radial-gradient(130% 48% at 100% -8%, rgba(248, 228, 196, 0.95), transparent 58%),
+      var(--color-bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .header-dock.menu-open {
+    --color-text: #4a2c16;
+    --color-text-muted: #8a6240;
+    transform: none;
+    pointer-events: auto;
+
+    .menu-toggle span {
+      background: var(--color-text);
+    }
+
+    ::ng-deep .lang-trigger {
+      color: var(--color-text);
+
+      &:hover,
+      &[aria-expanded='true'] {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .header.menu-open .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: center;
+    height: 100%;
+    min-height: 0;
+    gap: 0 1rem;
+    padding-top: 0.35rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .header.menu-open .logo {
+    grid-column: 1;
+    grid-row: 1;
+    margin-right: 0;
+  }
+
+  .header.menu-open .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 0;
+  }
+
+  .header.menu-open .nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: stretch;
+    width: auto;
+    max-height: none;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 1;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    padding: 1rem 0 0.2rem;
+    border-top: none;
+    transition: none;
+
+    a:not(.nav-cta) {
+      flex: 1 1 0;
+      display: flex;
+      align-items: center;
+      min-height: 4.25rem;
+      padding: 0.9rem 1.05rem;
+      border: none;
+      border-radius: 18px;
+      background: var(--color-cream);
+      box-shadow: inset 0 0 0 1px rgba(227, 192, 138, 0.7);
+      font-size: clamp(1.45rem, 5.6vw, 1.9rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--color-text);
+
+      &:hover,
+      &.active {
+        color: var(--color-text);
+        background: var(--color-bg-warm);
+        box-shadow: inset 0 0 0 1px rgba(227, 192, 138, 0.95);
+      }
+    }
+
+    a.nav-cta {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 3.35rem;
+      margin: 0.35rem 0 0.15rem;
+      padding: 0.95rem 1.25rem;
+      align-self: stretch;
+      font-size: 1.05rem;
+      border: none;
+    }
+  }
+
 }
 
 @media (max-width: 480px) {
