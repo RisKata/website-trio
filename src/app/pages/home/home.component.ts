@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { ConsentService } from '../../core/consent/consent.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { TranslationService } from '../../core/i18n/translation.service';
-import { featuredProducts } from '../../core/products/catalog';
+import { featuredProducts } from '../../core/products/featured';
 import { AnimateOnScrollDirective } from '../../shared/animate-on-scroll.directive';
 
 @Component({
@@ -23,7 +23,7 @@ export class HomeComponent {
 
   /** Temporary visualization clip; swap the id when the final film is ready. */
   readonly videoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-    'https://www.youtube.com/embed/PyX9iImFnOI?si=yPqRwcOjuPl0zzRC'
+    'https://www.youtube.com/embed/cb0v78az8kM?si=FQ4rxFNFFJK-dQSM'
   );
 
   /** Facebook Page Plugin timeline. A custom post grid needs the Graph API and a server. */

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { products, Product } from '../../core/products/catalog';
 import { TranslationKey } from '../../core/i18n/translations';
@@ -17,7 +18,18 @@ interface CategoryTile {
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+
   selectedCategory = 'All';
+
+  constructor() {
+    this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(params => {
+      const category = params.get('category');
+      this.selectedCategory =
+        category === 'Puff' || category === 'Dough' || category === 'Fry' ? category : 'All';
+    });
+  }
 
   categories: CategoryTile[] = [
     { id: 'Puff', key: 'products.category.puff' },
@@ -35,6 +47,11 @@ export class ProductsComponent {
   }
 
   selectCategory(category: string): void {
-    this.selectedCategory = category === 'All' || this.selectedCategory === category ? 'All' : category;
+    const next = category === 'All' || this.selectedCategory === category ? null : category;
+    void this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { category: next },
+      queryParamsHandling: 'merge'
+    });
   }
 }

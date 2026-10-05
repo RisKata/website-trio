@@ -18,20 +18,20 @@
     </div>
     <div class="features-grid">
       <article class="feature-card" appAnimateOnScroll>
-        <h3>{{ 'home.features.factory.title' | t }}</h3>
-        <p>{{ 'home.features.factory.desc' | t }}</p>
-      </article>
-      <article class="feature-card stagger-1" appAnimateOnScroll>
-        <h3>{{ 'home.features.frozen.title' | t }}</h3>
-        <p>{{ 'home.features.frozen.desc' | t }}</p>
-      </article>
-      <article class="feature-card stagger-2" appAnimateOnScroll>
-        <h3>{{ 'home.features.time.title' | t }}</h3>
-        <p>{{ 'home.features.time.desc' | t }}</p>
-      </article>
-      <article class="feature-card stagger-3" appAnimateOnScroll>
         <h3>{{ 'home.features.quality.title' | t }}</h3>
         <p>{{ 'home.features.quality.desc' | t }}</p>
+      </article>
+      <article class="feature-card stagger-1" appAnimateOnScroll>
+        <h3>{{ 'home.features.innovation.title' | t }}</h3>
+        <p>{{ 'home.features.innovation.desc' | t }}</p>
+      </article>
+      <article class="feature-card stagger-2" appAnimateOnScroll>
+        <h3>{{ 'home.features.practical.title' | t }}</h3>
+        <p>{{ 'home.features.practical.desc' | t }}</p>
+      </article>
+      <article class="feature-card stagger-3" appAnimateOnScroll>
+        <h3>{{ 'home.features.taste.title' | t }}</h3>
+        <p>{{ 'home.features.taste.desc' | t }}</p>
       </article>
     </div>
   </div>
@@ -43,22 +43,16 @@
       <iframe
         [src]="videoUrl"
         title="YouTube video player"
+        loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
     </div>
     <div class="story-copy">
-      <h2>Lorem ipsum dolor sit amet</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
-      </p>
+      <h2>{{ 'home.story.title' | t }}</h2>
+      <p>{{ 'home.story.p1' | t }}</p>
+      <p>{{ 'home.story.p2' | t }}</p>
     </div>
   </div>
 </section>
@@ -86,10 +80,12 @@
           [routerLink]="['/products', product.id]"
         >
           <div class="preview-image">
-            <img [src]="product.images[0]" [alt]="product.nameKey | t" />
+            <img [src]="product.images[0]" [alt]="product.nameKey | t" loading="lazy" />
           </div>
           <h3>{{ product.nameKey | t }}</h3>
-          <p>{{ product.descKey | t }}</p>
+          @if (product.descKey | t) {
+            <p>{{ product.descKey | t }}</p>
+          }
         </a>
       }
     </div>
@@ -129,6 +125,7 @@
           width="500"
           height="560"
           scrolling="no"
+          loading="lazy"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
         ></iframe>

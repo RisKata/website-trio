@@ -46,6 +46,25 @@ import { ProductMark } from '../../core/products/catalog';
             <circle cx="24" cy="30" r="2" fill="#f7f3e8" />
           </g>
         }
+        @case ('egg') {
+          <circle cx="24" cy="24" r="22" fill="#fff8ee" stroke="#e2c48a" stroke-width="1.5" />
+          <ellipse cx="24" cy="25" rx="8" ry="11" fill="#fff" stroke="#d7a85a" stroke-width="1.6" />
+          <ellipse cx="24" cy="25.5" rx="3.2" ry="4.2" fill="#f0b429" />
+        }
+        @case ('mustard') {
+          <circle cx="24" cy="24" r="22" fill="#fff6d8" stroke="#d4a017" stroke-width="1.5" />
+          <circle cx="18" cy="26" r="4.2" fill="#e0b000" />
+          <circle cx="25" cy="22" r="5" fill="#f2c200" />
+          <circle cx="30" cy="28" r="3.4" fill="#c99200" />
+        }
+        @case ('sesame') {
+          <circle cx="24" cy="24" r="22" fill="#f8f1e3" stroke="#c4a574" stroke-width="1.5" />
+          <ellipse cx="17" cy="20" rx="2.2" ry="4" transform="rotate(-20 17 20)" fill="#e6d3a1" stroke="#b08958" stroke-width="0.6" />
+          <ellipse cx="24" cy="18" rx="2.2" ry="4" fill="#f3e2bc" stroke="#b08958" stroke-width="0.6" />
+          <ellipse cx="31" cy="21" rx="2.2" ry="4" transform="rotate(18 31 21)" fill="#e6d3a1" stroke="#b08958" stroke-width="0.6" />
+          <ellipse cx="20" cy="29" rx="2.2" ry="4" transform="rotate(12 20 29)" fill="#f3e2bc" stroke="#b08958" stroke-width="0.6" />
+          <ellipse cx="28" cy="30" rx="2.2" ry="4" transform="rotate(-14 28 30)" fill="#e6d3a1" stroke="#b08958" stroke-width="0.6" />
+        }
       }
     </svg>
   `,

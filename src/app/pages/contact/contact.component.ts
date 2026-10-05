@@ -7,4 +7,9 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {}
+export class ContactComponent {
+  readonly addressMaps = {
+    one: 'https://maps.app.goo.gl/SjT3fQ9enuZTPqCU7',
+    two: 'https://maps.app.goo.gl/1iXvsTBzL6vdhZ6M9'
+  };
+}

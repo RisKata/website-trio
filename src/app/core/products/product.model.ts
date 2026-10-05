@@ -1,0 +1,37 @@
+import type { TranslationKey } from '../i18n/translations';
+
+export type Diet = 'vegetarian' | 'vegan' | 'none';
+export type Allergen = 'gluten' | 'milk' | 'soy' | 'egg' | 'mustard' | 'sesame';
+export type ProductMark = 'vegetarian' | 'vegan' | Allergen;
+
+export interface ProductFlavor {
+  id: string;
+  nameKey: TranslationKey;
+  titleKey: TranslationKey;
+  descKey: TranslationKey;
+  ingredientsKey: TranslationKey;
+  weightKey: TranslationKey;
+  allergens?: Allergen[];
+  diet?: Diet;
+  preparationKey?: TranslationKey;
+  nutritionKey?: TranslationKey;
+  images?: string[];
+}
+
+export interface Product {
+  id: string;
+  nameKey: TranslationKey;
+  descKey: TranslationKey;
+  ingredientsKey: TranslationKey;
+  weightKey: TranslationKey;
+  allergens: Allergen[];
+  diet: Diet;
+  preparationKey: TranslationKey;
+  nutritionKey: TranslationKey;
+  storageKey: TranslationKey;
+  extraKey: TranslationKey;
+  categoryKey: TranslationKey;
+  category: 'Puff' | 'Dough' | 'Fry';
+  images: string[];
+  flavors?: ProductFlavor[];
+}

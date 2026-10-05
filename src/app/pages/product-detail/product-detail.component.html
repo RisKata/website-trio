@@ -1,6 +1,11 @@
 <section class="section product-detail">
   <div class="container">
-    <a routerLink="/products" class="back-link">{{ 'products.back' | t }}</a>
+    <a routerLink="/products" class="back-link">
+      <svg class="back-chevron" viewBox="0 0 12 12" aria-hidden="true">
+        <path d="M7.75 1.5 3.25 6l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      {{ 'products.back' | t }}
+    </a>
 
     @if (product(); as item) {
       @let flavor = item.flavors?.[flavorIndex()];
@@ -36,7 +41,7 @@
                   [attr.aria-label]="'products.gallery.enlarge' | t"
                   (click)="selectImage(index)"
                 >
-                  <img [src]="image" [alt]="titleKey | t" />
+                  <img [src]="image" [alt]="titleKey | t" [attr.loading]="index === 0 ? null : 'lazy'" />
                 </button>
               }
             </div>
@@ -67,34 +72,68 @@
             </section>
           }
 
-          <h2>{{ 'products.details.description' | t }}</h2>
-          <p>{{ (flavor?.descKey ?? item.descKey) | t }}</p>
+          @let descKey = flavor?.descKey ?? item.descKey;
+          @let ingredientsKey = flavor?.ingredientsKey ?? item.ingredientsKey;
+          @let preparationKey = flavor?.preparationKey ?? item.preparationKey;
+          @let nutritionKey = flavor?.nutritionKey ?? item.nutritionKey;
 
-          <h2>{{ 'products.details.ingredients' | t }}</h2>
-          <p>{{ (flavor?.ingredientsKey ?? item.ingredientsKey) | t }}</p>
+          @if (hasText(descKey)) {
+            <h2>{{ 'products.details.description' | t }}</h2>
+            <p class="block-copy">{{ descKey | t }}</p>
+          }
 
-          <h2>{{ 'products.details.preparation' | t }}</h2>
-          <p>{{ (flavor?.preparationKey ?? item.preparationKey) | t }}</p>
+          @if (hasText(ingredientsKey)) {
+            <h2>{{ 'products.details.ingredients' | t }}</h2>
+            <p class="block-copy">{{ ingredientsKey | t }}</p>
+          }
 
-          <h2>{{ 'products.details.nutrition' | t }}</h2>
-          <p class="nutrition">{{ (flavor?.nutritionKey ?? item.nutritionKey) | t }}</p>
+          @if (hasText(preparationKey)) {
+            <h2>{{ 'products.details.preparation' | t }}</h2>
+            <p class="block-copy">{{ preparationKey | t }}</p>
+          }
 
-          <h2>{{ 'products.details.weight' | t }}</h2>
-          <p>{{ (flavor?.weightKey ?? item.weightKey) | t }}</p>
+          @if (hasText(nutritionKey)) {
+            <h2>{{ 'products.details.nutrition' | t }}</h2>
+            @let nutrition = nutritionTable(nutritionKey);
+            @if (nutrition.rows.length) {
+              <table class="nutrition-table">
+                @if (nutrition.caption) {
+                  <caption>{{ nutrition.caption }}</caption>
+                }
+                <tbody>
+                  @for (row of nutrition.rows; track $index) {
+                    <tr [class.nested]="row.nested">
+                      <th scope="row">{{ row.label }}</th>
+                      <td>{{ row.value }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            } @else {
+              <p class="block-copy">{{ nutritionKey | t }}</p>
+            }
+          }
 
-          <section class="allergens">
-            <h2>{{ 'products.details.allergens' | t }}</h2>
-            <ul class="allergen-list">
-              @for (allergen of allergensFor(item); track allergen) {
-                <li>
-                  <span class="mark-glyph">
-                    <app-mark-icon [name]="allergen" />
-                  </span>
-                  <span>{{ allergenLabel(allergen) | t }}</span>
-                </li>
-              }
-            </ul>
-          </section>
+          @if (hasText(item.extraKey)) {
+            <h2>{{ 'products.details.extra' | t }}</h2>
+            <p class="block-copy">{{ item.extraKey | t }}</p>
+          }
+
+          @if (allergensFor(item).length) {
+            <section class="allergens">
+              <h2>{{ 'products.details.allergens' | t }}</h2>
+              <ul class="allergen-list">
+                @for (allergen of allergensFor(item); track allergen) {
+                  <li>
+                    <span class="mark-glyph">
+                      <app-mark-icon [name]="allergen" />
+                    </span>
+                    <span>{{ allergenLabel(allergen) | t }}</span>
+                  </li>
+                }
+              </ul>
+            </section>
+          }
         </div>
       </div>
 

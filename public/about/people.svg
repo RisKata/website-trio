@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-label="Луѓето зад производите">
+  <rect width="960" height="600" fill="#F2D4A6"/>
+  <circle cx="787.2" cy="132" r="96" fill="#C56A21" opacity="0.22"/>
+  <circle cx="172.8" cy="468" r="120" fill="#C56A21" opacity="0.16"/>
+  <rect x="36" y="36" width="888" height="528" rx="18" fill="none" stroke="#8C3F12" stroke-width="3" stroke-dasharray="12 10" opacity="0.45"/>
+  <g transform="translate(444 230)" fill="none" stroke="#8C3F12" stroke-width="4" stroke-linejoin="round" opacity="0.7">
+    <rect x="4" y="16" width="64" height="48" rx="8"/>
+    <path d="M22 16 L28 6 H46 L52 16"/>
+    <circle cx="36" cy="40" r="10"/>
+  </g>
+  <text x="50%" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#4A2C16">Луѓето зад производите</text>
+  <text x="50%" y="362" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#8A6240">about/people.svg</text>
+</svg>

@@ -1,70 +1,157 @@
 <section class="page-hero">
   <div class="container">
     <h1>{{ 'about.hero.title' | t }}</h1>
-    <p>{{ 'about.hero.subtitle' | t }}</p>
+    <p>{{ 'about.hero.tagline' | t }}</p>
   </div>
 </section>
 
 <section class="section">
-  <div class="container about-grid">
-    <div class="about-content" appAnimateOnScroll>
+  <div class="container">
+    <div class="prose" appAnimateOnScroll>
+      <p>
+        {{ 'about.intro.before' | t }}<strong>{{ 'about.intro.brand' | t }}</strong>{{ 'about.intro.after' | t }}
+      </p>
+      <p>{{ 'about.intro.p2' | t }}</p>
+      <p>{{ 'about.intro.p3' | t }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container split-media">
+    <div class="prose" appAnimateOnScroll>
       <h2 class="section-title">{{ 'about.story.title' | t }}</h2>
       <p>{{ 'about.story.p1' | t }}</p>
       <p>{{ 'about.story.p2' | t }}</p>
+      <p>{{ 'about.story.p3' | t }}</p>
+      <p>{{ 'about.story.p4' | t }}</p>
     </div>
-    <div class="about-stats">
-      <div class="stat" appAnimateOnScroll>
-        <span class="stat-number stat-number-static">{{ sinceLabel() }}</span>
-      </div>
-      <div class="stat stagger-1" appAnimateOnScroll>
-        <span class="stat-number">{{ stats[0].value }}+</span>
-        <span class="stat-label">{{ 'about.stats.products' | t }}</span>
-      </div>
-      <div class="stat stagger-2" appAnimateOnScroll>
-        <span class="stat-number">{{ stats[1].value }}+</span>
-        <span class="stat-label">{{ 'about.stats.partners' | t }}</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section values-section">
-  <div class="container">
-    <h2 class="section-title" appAnimateOnScroll>{{ 'about.values.title' | t }}</h2>
-    <div class="values-grid">
-      <article class="value-card" appAnimateOnScroll>
-        <h3>{{ 'about.values.quality.title' | t }}</h3>
-        <p>{{ 'about.values.quality.desc' | t }}</p>
-      </article>
-      <article class="value-card stagger-1" appAnimateOnScroll>
-        <h3>{{ 'about.values.sustain.title' | t }}</h3>
-        <p>{{ 'about.values.sustain.desc' | t }}</p>
-      </article>
-      <article class="value-card stagger-2" appAnimateOnScroll>
-        <h3>{{ 'about.values.partner.title' | t }}</h3>
-        <p>{{ 'about.values.partner.desc' | t }}</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section factory-section">
-  <div class="container factory-inner">
     <img
-      class="factory-visual"
+      class="media"
       appAnimateOnScroll
       src="trio-building.png"
-      [alt]="'about.factory.title' | t"
+      [alt]="'about.story.title' | t"
+      loading="lazy"
     />
-    <div appAnimateOnScroll>
-      <h2 class="section-title">{{ 'about.factory.title' | t }}</h2>
-      <p>{{ 'about.factory.desc' | t }}</p>
-      <ul class="factory-list">
-        <li>{{ 'about.factory.item1' | t }}</li>
-        <li>{{ 'about.factory.item2' | t }}</li>
-        <li>{{ 'about.factory.item3' | t }}</li>
-        <li>{{ 'about.factory.item4' | t }}</li>
+  </div>
+</section>
+
+<section class="section anchor" id="quality">
+  <div class="container">
+    <div class="prose" appAnimateOnScroll>
+      <h2 class="section-title">{{ 'about.quality.title' | t }}</h2>
+      <p>{{ 'about.quality.p1' | t }}</p>
+      <p>{{ 'about.quality.p2' | t }}</p>
+      <ul class="steps">
+        <li>{{ 'about.quality.step.materials' | t }}</li>
+        <li>{{ 'about.quality.step.production' | t }}</li>
+        <li>{{ 'about.quality.step.storage' | t }}</li>
+        <li>{{ 'about.quality.step.transport' | t }}</li>
       </ul>
+      <p>
+        {{ 'about.quality.systems.before' | t }}<strong>{{ 'about.quality.systems.haccp' | t }}</strong>{{ 'about.quality.systems.mid' | t }}<strong>{{ 'about.quality.systems.iso' | t }}</strong>{{ 'about.quality.systems.after' | t }}
+      </p>
+      <div class="cert-row">
+        <p class="cert">{{ 'about.quality.badge.haccp' | t }}</p>
+        <p class="cert">{{ 'about.quality.badge.iso' | t }}</p>
+      </div>
+      <p>{{ 'about.quality.p4' | t }}</p>
     </div>
+  </div>
+</section>
+
+<section class="section band anchor" id="innovation">
+  <div class="container split-media split-media-reverse">
+    <img
+      class="media"
+      appAnimateOnScroll
+      src="about/innovation.jpg"
+      [alt]="'about.innovation.title' | t"
+      loading="lazy"
+    />
+    <article class="topic-card" appAnimateOnScroll>
+      <h2>{{ 'about.innovation.title' | t }}</h2>
+      <p>{{ 'about.innovation.p1' | t }}</p>
+      <p>{{ 'about.innovation.p2' | t }}</p>
+      <p>{{ 'about.innovation.p3' | t }}</p>
+      <p>{{ 'about.innovation.p4' | t }}</p>
+    </article>
+  </div>
+</section>
+
+<section class="section anchor" id="taste">
+  <div class="container">
+    <div class="prose" appAnimateOnScroll>
+      <h2 class="section-title">{{ 'about.moments.title' | t }}</h2>
+      <p>{{ 'about.moments.p1' | t }}</p>
+      <p>{{ 'about.moments.p2' | t }}</p>
+      <p>{{ 'about.moments.p3' | t }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container split-media">
+    <img
+      class="media"
+      appAnimateOnScroll
+      src="about/horeca.jpg"
+      [alt]="'about.horeca.title' | t"
+      loading="lazy"
+    />
+    <article class="topic-card" appAnimateOnScroll>
+      <h2>{{ 'about.horeca.title' | t }}</h2>
+      <p>{{ 'about.horeca.p1' | t }}</p>
+      <p>{{ 'about.horeca.p2' | t }}</p>
+      <ul class="audience">
+        <li>{{ 'about.horeca.audience.restaurants' | t }}</li>
+        <li>{{ 'about.horeca.audience.hotels' | t }}</li>
+        <li>{{ 'about.horeca.audience.bakeries' | t }}</li>
+        <li>{{ 'about.horeca.audience.venues' | t }}</li>
+        <li>{{ 'about.horeca.audience.kitchens' | t }}</li>
+      </ul>
+      <p>{{ 'about.horeca.p3' | t }}</p>
+      <a routerLink="/horeca" class="btn btn-primary">{{ 'home.cta.button' | t }}</a>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split-grid">
+    <article class="topic-card" appAnimateOnScroll>
+      <h2>{{ 'about.people.title' | t }}</h2>
+      <p>{{ 'about.people.p1' | t }}</p>
+      <p>{{ 'about.people.p2' | t }}</p>
+      <p>{{ 'about.people.p3' | t }}</p>
+    </article>
+    <article class="topic-card stagger-1" appAnimateOnScroll>
+      <h2>{{ 'about.responsibility.title' | t }}</h2>
+      <p>{{ 'about.responsibility.p1' | t }}</p>
+      <p>{{ 'about.responsibility.p2' | t }}</p>
+      <p>{{ 'about.responsibility.p3' | t }}</p>
+    </article>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container">
+    <div class="prose" appAnimateOnScroll>
+      <h2 class="section-title">{{ 'about.vision.title' | t }}</h2>
+      <p>{{ 'about.vision.p1' | t }}</p>
+      <p>{{ 'about.vision.p2' | t }}</p>
+    </div>
+    <div class="beats">
+      <p appAnimateOnScroll>{{ 'about.vision.beat.product' | t }}</p>
+      <p class="stagger-1" appAnimateOnScroll>{{ 'about.vision.beat.process' | t }}</p>
+      <p class="stagger-2" appAnimateOnScroll>{{ 'about.vision.beat.consumer' | t }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="container" appAnimateOnScroll>
+    <h2>{{ 'about.close.title' | t }}</h2>
+    <p class="close-tagline">{{ 'about.close.tagline' | t }}</p>
+    <p>{{ 'about.close.text' | t }}</p>
   </div>
 </section>

@@ -28,7 +28,7 @@ export class LanguageSwitcherComponent {
   }
 
   select(lang: Language): void {
-    this.i18n.setLanguage(lang);
+    void this.i18n.setLanguage(lang).catch(() => undefined);
     this.open = false;
   }
 

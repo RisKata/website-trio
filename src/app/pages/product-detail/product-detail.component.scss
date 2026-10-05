@@ -5,6 +5,8 @@
 
 .back-link {
   display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   margin-bottom: 1.75rem;
   font-weight: 600;
   color: var(--color-primary-dark);
@@ -12,6 +14,12 @@
   &:hover {
     color: var(--color-primary);
   }
+}
+
+.back-chevron {
+  width: 0.7rem;
+  height: 0.7rem;
+  flex-shrink: 0;
 }
 
 .detail-layout {
@@ -156,8 +164,58 @@
   margin-bottom: 0.85rem;
 }
 
+.block-copy,
 .nutrition {
   white-space: pre-line;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.15rem;
+
+  caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0 0 0.45rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--color-text-muted);
+  }
+
+  th,
+  td {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--color-beige-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    vertical-align: baseline;
+  }
+
+  th {
+    text-align: left;
+    color: var(--color-text);
+    padding-right: 1rem;
+  }
+
+  td {
+    text-align: right;
+    white-space: nowrap;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  tr.nested th {
+    padding-left: 1rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  tr:last-child th,
+  tr:last-child td {
+    border-bottom: 0;
+  }
 }
 
 .flavors {

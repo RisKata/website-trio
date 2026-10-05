@@ -10,6 +10,17 @@ import { Allergen, Diet, findProduct, Product } from '../../core/products/catalo
 import { TranslationKey } from '../../core/i18n/translations';
 import { MarkIconComponent } from './mark-icon.component';
 
+interface NutritionRow {
+  label: string;
+  value: string;
+  nested: boolean;
+}
+
+interface NutritionTable {
+  caption: string;
+  rows: NutritionRow[];
+}
+
 @Component({
   selector: 'app-product-detail',
   imports: [RouterLink, TranslatePipe, MarkIconComponent],
@@ -71,14 +82,63 @@ export class ProductDetailComponent implements OnDestroy {
     return diet === 'vegan' ? 'products.diet.vegan' : 'products.diet.vegetarian';
   }
 
+  hasText(key: TranslationKey | undefined): boolean {
+    return !!key && this.i18n.t(key).trim().length > 0;
+  }
+
+  nutritionTable(key: TranslationKey | undefined): NutritionTable {
+    const text = key ? this.i18n.t(key) : '';
+    const unit = String.raw`(?:[kк]{1,2}cal|[kк][jј]|гр|gr|г|g)\.?`;
+    const amount = String.raw`\d[\d.,]*\s*${unit}`;
+    const valuePattern = new RegExp(String.raw`^(.*?)\s+(${amount}(?:\s*\/\s*(?:\d[\d.,]*\s*)?${unit})?)\s*$`, 'iu');
+    const notes: string[] = [];
+    const rows: NutritionRow[] = [];
+
+    for (const rawLine of text.split('\n')) {
+      const line = rawLine.trim();
+      if (!line) {
+        continue;
+      }
+
+      const nested = /^-\s*/.test(line);
+      const match = line.replace(/^-\s*/, '').match(valuePattern);
+      if (!match) {
+        notes.push(line.replace(/:$/, ''));
+        continue;
+      }
+
+      const label = match[1].replace(/[.:]\s*$/, '').trim();
+      const value = match[2].replace(/\.(?=\s|$)/g, '').replace(/\s+/g, ' ').trim();
+      if (!label || !value) {
+        notes.push(line);
+        continue;
+      }
+
+      rows.push({
+        label,
+        value,
+        nested: nested || /^(of which|од кои|nga të cilat)(\s|$)/i.test(label)
+      });
+    }
+
+    return { caption: notes.filter(note => /\d/.test(note)).join(' '), rows };
+  }
+
   allergenLabel(allergen: Allergen): TranslationKey {
-    if (allergen === 'milk') {
-      return 'products.allergen.milk';
+    switch (allergen) {
+      case 'milk':
+        return 'products.allergen.milk';
+      case 'soy':
+        return 'products.allergen.soy';
+      case 'egg':
+        return 'products.allergen.egg';
+      case 'mustard':
+        return 'products.allergen.mustard';
+      case 'sesame':
+        return 'products.allergen.sesame';
+      default:
+        return 'products.allergen.gluten';
     }
-    if (allergen === 'soy') {
-      return 'products.allergen.soy';
-    }
-    return 'products.allergen.gluten';
   }
 
   selectImage(index: number): void {
