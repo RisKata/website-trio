@@ -6,6 +6,25 @@ export type { Allergen, Diet, Product, ProductFlavor, ProductMark } from './prod
 export const products: Product[] = [
   puffCheese,
   {
+    id: 'mini-puff-cheese',
+    nameKey: 'products.p28.name',
+    descKey: 'products.p01.desc',
+    ingredientsKey: 'products.p01.ingredients',
+    weightKey: 'products.p01.weight',
+    allergens: ['gluten', 'milk', 'egg'],
+    diet: 'none',
+    preparationKey: 'products.p01.preparation',
+    nutritionKey: 'products.p01.nutrition',
+    storageKey: 'products.p01.storage',
+    extraKey: 'products.p01.extra',
+    categoryKey: 'products.category.puff',
+    category: 'Puff',
+    images: [
+      'products/lisnati-pogachici-so-sirenje/pogacici-sirenje.png',
+      'products/lisnati-pogachici-so-sirenje/IMG_8666.jpg'
+    ]
+  },
+  {
     id: 'puff-kashkaval',
     nameKey: 'products.p02.name',
     descKey: 'products.p02.desc',
@@ -19,11 +38,49 @@ export const products: Product[] = [
     extraKey: 'products.p02.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-kashkaval/IMG_8359.JPG']
+    images: [
+      'products/lisnati-pogachici-so-kashkaval/pogacici-kaskaval.png',
+      'products/lisnati-pogachici-so-kashkaval/IMG_8359.JPG'
+    ]
+  },
+  {
+    id: 'mini-puff-kashkaval',
+    nameKey: 'products.p29.name',
+    descKey: 'products.p02.desc',
+    ingredientsKey: 'products.p02.ingredients',
+    weightKey: 'products.p02.weight',
+    allergens: ['gluten', 'milk', 'egg'],
+    diet: 'none',
+    preparationKey: 'products.p02.preparation',
+    nutritionKey: 'products.p02.nutrition',
+    storageKey: 'products.p02.storage',
+    extraKey: 'products.p02.extra',
+    categoryKey: 'products.category.puff',
+    category: 'Puff',
+    images: [
+      'products/lisnati-pogachici-so-kashkaval/pogacici-kaskaval.png',
+      'products/lisnati-pogachici-so-kashkaval/IMG_8359.JPG'
+    ]
   },
   {
     id: 'puff-spinach-cheese',
     nameKey: 'products.p03.name',
+    descKey: 'products.p03.desc',
+    ingredientsKey: 'products.p03.ingredients',
+    weightKey: 'products.p03.weight',
+    allergens: ['gluten', 'milk'],
+    diet: 'none',
+    preparationKey: 'products.p03.preparation',
+    nutritionKey: 'products.p03.nutrition',
+    storageKey: 'products.p03.storage',
+    extraKey: 'products.p03.extra',
+    categoryKey: 'products.category.puff',
+    category: 'Puff',
+    images: ['products/lisnati-pogachici-so-spanakj-i-sirenje/IMG_7920.JPG']
+  },
+  {
+    id: 'mini-puff-spinach-cheese',
+    nameKey: 'products.p31.name',
     descKey: 'products.p03.desc',
     ingredientsKey: 'products.p03.ingredients',
     weightKey: 'products.p03.weight',
@@ -51,7 +108,29 @@ export const products: Product[] = [
     extraKey: 'products.p04.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-pica-fil/IMG_8387.jpg']
+    images: [
+      'products/lisnati-pogachici-so-pica-fil/pogacici.png',
+      'products/lisnati-pogachici-so-pica-fil/IMG_8387.jpg'
+    ]
+  },
+  {
+    id: 'mini-puff-pizza',
+    nameKey: 'products.p30.name',
+    descKey: 'products.p04.desc',
+    ingredientsKey: 'products.p04.ingredients',
+    weightKey: 'products.p04.weight',
+    allergens: ['gluten', 'egg'],
+    diet: 'none',
+    preparationKey: 'products.p04.preparation',
+    nutritionKey: 'products.p04.nutrition',
+    storageKey: 'products.p04.storage',
+    extraKey: 'products.p04.extra',
+    categoryKey: 'products.category.puff',
+    category: 'Puff',
+    images: [
+      'products/lisnati-pogachici-so-pica-fil/pogacici.png',
+      'products/lisnati-pogachici-so-pica-fil/IMG_8387.jpg'
+    ]
   },
   {
     id: 'puff-apple-cinnamon',
@@ -103,7 +182,29 @@ export const products: Product[] = [
     extraKey: 'products.p07.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-maslinki-i-pechurki/IMG_8699.jpg']
+    images: [
+      'products/lisnati-pogachici-so-maslinki-i-pechurki/pogacici-maslinki.png',
+      'products/lisnati-pogachici-so-maslinki-i-pechurki/IMG_8699.jpg'
+    ]
+  },
+  {
+    id: 'mini-puff-olives-mushrooms',
+    nameKey: 'products.p32.name',
+    descKey: 'products.p07.desc',
+    ingredientsKey: 'products.p07.ingredients',
+    weightKey: 'products.p07.weight',
+    allergens: ['gluten'],
+    diet: 'none',
+    preparationKey: 'products.p07.preparation',
+    nutritionKey: 'products.p07.nutrition',
+    storageKey: 'products.p07.storage',
+    extraKey: 'products.p07.extra',
+    categoryKey: 'products.category.puff',
+    category: 'Puff',
+    images: [
+      'products/lisnati-pogachici-so-maslinki-i-pechurki/pogacici-maslinki.png',
+      'products/lisnati-pogachici-so-maslinki-i-pechurki/IMG_8699.jpg'
+    ]
   },
   {
     id: 'piroshki-pork',
@@ -119,7 +220,10 @@ export const products: Product[] = [
     extraKey: 'products.p08.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/piroshki-so-svinska-shunka/IMG_9146.JPG']
+    images: [
+      'products/piroshki-so-svinska-shunka/piroski-sunka.png',
+      'products/piroshki-so-svinska-shunka/IMG_9146.JPG'
+    ]
   },
   {
     id: 'piroshki-chicken',
@@ -135,7 +239,10 @@ export const products: Product[] = [
     extraKey: 'products.p09.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/piroshki-so-pileshka-shunka/IMG_9146.JPG']
+    images: [
+      'products/piroshki-so-pileshka-shunka/piroslki-pileska-sunka.png',
+      'products/piroshki-so-pileshka-shunka/IMG_9146.JPG'
+    ]
   },
   {
     id: 'piroshki-cheese',
@@ -167,7 +274,10 @@ export const products: Product[] = [
     extraKey: 'products.p11.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/piroshki-kashkaval/IMG_9381.jpg']
+    images: [
+      'products/piroshki-kashkaval/piroski-kaskaval.png',
+      'products/piroshki-kashkaval/IMG_9381.jpg'
+    ]
   },
   {
     id: 'pizza-dough',
@@ -200,7 +310,7 @@ export const products: Product[] = [
     extraKey: 'products.p14.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/venecija-golema/IMG_5850.JPG']
+    images: ['products/venecija-golema/venecija.png']
   },
   {
     id: 'mini-pizza-ham',
@@ -216,7 +326,7 @@ export const products: Product[] = [
     extraKey: 'products.p15.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/mini-pica-so-shunka/IMG_5850.JPG']
+    images: ['products/mini-pica-so-shunka/mini-pica-sunka.png']
   },
   {
     id: 'mini-pizza-chicken',
@@ -232,7 +342,7 @@ export const products: Product[] = [
     extraKey: 'products.p16.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/mini-pica-so-pileshka-shunka/IMG_5850.JPG']
+    images: ['products/mini-pica-so-pileshka-shunka/mini-pileska-sunka.png']
   },
   {
     id: 'my-pizza',
@@ -280,7 +390,7 @@ export const products: Product[] = [
     extraKey: 'products.p19.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/zdenki-pohovani/placeholder.svg']
+    images: ['products/zdenki-pohovani/zdenki.jpeg']
   },
   {
     id: 'croquettes-cheese',
@@ -296,7 +406,10 @@ export const products: Product[] = [
     extraKey: 'products.p20.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/kroketi-so-sirenje/kroketi.jpg']
+    images: [
+      'products/kroketi-so-sirenje/kroketi-sirenje.png',
+      'products/kroketi-so-sirenje/kroketi.jpg'
+    ]
   },
   {
     id: 'croquettes-kashkaval',
@@ -312,7 +425,10 @@ export const products: Product[] = [
     extraKey: 'products.p21.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/kroketi-so-kashkaval/kroketi-kaskaval.jpg']
+    images: [
+      'products/kroketi-so-kashkaval/kroketi-kaskaval.png',
+      'products/kroketi-so-kashkaval/kroketi-kaskaval.jpg'
+    ]
   },
   {
     id: 'my-rolls',
@@ -328,7 +444,10 @@ export const products: Product[] = [
     extraKey: 'products.p22.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/moite-kifli/moite-kifli.jpg']
+    images: [
+      'products/moite-kifli/kifli.png',
+      'products/moite-kifli/moite-kifli.jpg'
+    ]
   },
   {
     id: 'puff-furka',
@@ -345,10 +464,10 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-    'products/lisnato-testo-furka/furka.jpg',
-    'products/lisnato-testo-furka/furki-peceni.jpg',
-    'products/lisnato-testo-furka/IMG_0702.JPG'
-  ]
+      'products/lisnato-testo-furka/furka.png',
+      'products/lisnato-testo-furka/furki-peceni.jpg',
+      'products/lisnato-testo-furka/IMG_0702.JPG'
+    ]
   },
   {
     id: 'puff-sheet',
@@ -364,7 +483,7 @@ export const products: Product[] = [
     extraKey: 'products.p24.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnato-testo-plochka/lisnato-plocka.jpg']
+    images: ['products/lisnato-testo-plochka/lisnato-plocka.png']
   },
   {
     id: 'puff-zhuzhu',
@@ -381,10 +500,9 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-    'products/lisnato-testo-zhu-zhu/zu-zu.jpg',
-    'products/lisnato-testo-zhu-zhu/IMG_7889.JPG',
-    'products/lisnato-testo-zhu-zhu/IMG_0891.JPG'
-  ]
+      'products/lisnato-testo-zhu-zhu/zuzu.png',
+      'products/lisnato-testo-zhu-zhu/IMG_0891.JPG'
+    ]
   },
   croissantPlain,
   {

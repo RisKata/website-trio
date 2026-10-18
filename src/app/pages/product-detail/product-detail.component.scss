@@ -69,7 +69,9 @@
 }
 
 .gallery-stage {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -81,9 +83,13 @@
 
   img {
     display: block;
-    width: 100%;
-    height: min(520px, 62vw);
-    object-fit: cover;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: min(420px, 52vh);
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   &:focus-visible {
@@ -113,7 +119,8 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   &.active {
@@ -226,6 +233,32 @@
   }
 }
 
+.show-more {
+  display: inline-block;
+  margin-top: 0.55rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-primary-dark);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
 .allergen-list {
   list-style: none;
   margin: 0;
@@ -294,19 +327,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 5rem 5rem 1.5rem;
   background: rgba(42, 24, 12, 0.82);
 }
 
 .lightbox-panel {
   position: relative;
   max-width: min(1100px, 100%);
-  max-height: calc(100vh - 3rem);
+  max-height: calc(100vh - 6.5rem);
 
   img {
     display: block;
     max-width: 100%;
-    max-height: calc(100vh - 3rem);
+    max-height: calc(100vh - 6.5rem);
     width: auto;
     height: auto;
     object-fit: contain;
@@ -316,10 +349,11 @@
 
 .lightbox-close {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 40px;
-  height: 40px;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
   border: none;
   border-radius: 999px;
   background: rgba(255, 250, 242, 0.92);
@@ -327,6 +361,56 @@
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
+
+  &:hover {
+    background: var(--color-white);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.92);
+  color: var(--color-text);
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:hover {
+    background: var(--color-white);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
 }
 
 .missing {
@@ -350,6 +434,6 @@
   }
 
   .gallery-stage img {
-    height: 280px;
+    max-height: 46vh;
   }
 }

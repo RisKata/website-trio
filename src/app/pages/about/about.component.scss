@@ -1,3 +1,9 @@
+.page-hero {
+  background:
+    linear-gradient(180deg, rgba(74, 44, 22, 0.08) 0%, rgba(74, 44, 22, 0.08) 16%, rgba(58, 32, 16, 0.48) 52%, rgba(42, 24, 12, 0.68) 100%),
+    url('../../../../public/cover/furki.JPG') center 42% / cover no-repeat;
+}
+
 .page-hero p {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   letter-spacing: 0.03em;

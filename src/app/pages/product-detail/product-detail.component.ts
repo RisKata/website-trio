@@ -40,12 +40,17 @@ export class ProductDetailComponent implements OnDestroy {
   readonly activeImage = signal(0);
   readonly flavorIndex = signal(0);
   readonly enlarged = signal(false);
+  readonly ingredientsOpen = signal(false);
+
+  private static readonly previewSentences = 2;
+  private static readonly previewChars = 360;
 
   constructor() {
     effect(() => {
       this.product();
       this.activeImage.set(0);
       this.flavorIndex.set(0);
+      this.ingredientsOpen.set(false);
       this.closeImage();
     });
 
@@ -149,7 +154,64 @@ export class ProductDetailComponent implements OnDestroy {
   selectFlavor(index: number): void {
     this.flavorIndex.set(index);
     this.activeImage.set(0);
+    this.ingredientsOpen.set(false);
     this.closeImage();
+  }
+
+  ingredientsVisible(key: TranslationKey | undefined): string {
+    this.i18n.currentLang();
+    const text = this.ingredientsText(key);
+    if (!text || this.ingredientsOpen() || !this.ingredientsOverflows(text)) {
+      return text;
+    }
+    return this.ingredientsPreview(text);
+  }
+
+  ingredientsCanExpand(key: TranslationKey | undefined): boolean {
+    this.i18n.currentLang();
+    return this.ingredientsOverflows(this.ingredientsText(key));
+  }
+
+  toggleIngredients(): void {
+    this.ingredientsOpen.update(open => !open);
+  }
+
+  private ingredientsText(key: TranslationKey | undefined): string {
+    return key ? this.i18n.t(key).trim() : '';
+  }
+
+  private ingredientsOverflows(text: string): boolean {
+    return !!text && this.ingredientsPreview(text).length < text.length;
+  }
+
+  private ingredientsPreview(text: string): string {
+    const paragraphs = text.split(/\n\s*\n/).map(part => part.trim()).filter(Boolean);
+    if (paragraphs.length > 1 && paragraphs[0].length <= ProductDetailComponent.previewChars) {
+      return paragraphs[0];
+    }
+
+    const source = paragraphs.length > 1 ? paragraphs[0] : text;
+    const sentences = [...source.matchAll(/[^.!?]+[.!?]+(?:\s+|$)|[^.!?]+$/g)];
+    let preview = '';
+    for (let index = 0; index < Math.min(sentences.length, ProductDetailComponent.previewSentences); index++) {
+      const next = `${preview}${sentences[index][0]}`.trimEnd();
+      if (preview && next.length > ProductDetailComponent.previewChars) {
+        break;
+      }
+      preview = next;
+    }
+    if (!preview) {
+      preview = source;
+    }
+
+    if (preview.length <= ProductDetailComponent.previewChars) {
+      return preview;
+    }
+
+    const slice = preview.slice(0, ProductDetailComponent.previewChars);
+    const cut = Math.max(slice.lastIndexOf(' '), slice.lastIndexOf('\n'));
+    const clipped = (cut > 80 ? slice.slice(0, cut) : slice).trim().replace(/[,;:]+$/, '');
+    return `${clipped}…`;
   }
 
   openImage(): void {
@@ -162,10 +224,35 @@ export class ProductDetailComponent implements OnDestroy {
     document.body.style.overflow = '';
   }
 
-  @HostListener('document:keydown.escape')
-  onEscape(): void {
-    if (this.enlarged()) {
+  stepImage(delta: number, event?: Event): void {
+    event?.stopPropagation();
+    const product = this.product();
+    if (!product) {
+      return;
+    }
+
+    const count = this.imageList(product).length;
+    if (count < 2) {
+      return;
+    }
+
+    this.activeImage.set((this.activeImage() + delta + count) % count);
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent): void {
+    if (!this.enlarged()) {
+      return;
+    }
+
+    if (event.key === 'Escape') {
       this.closeImage();
+      return;
+    }
+
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      this.stepImage(event.key === 'ArrowLeft' ? -1 : 1);
     }
   }
 

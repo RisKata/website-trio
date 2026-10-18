@@ -41,9 +41,29 @@ export class ProductsComponent {
 
   get filteredProducts(): Product[] {
     if (this.selectedCategory === 'All') {
-      return this.products;
+      return this.mixedCatalog(this.products);
     }
     return this.products.filter(p => p.category === this.selectedCategory);
+  }
+
+  /** Round-robin across categories so "All" does not open with one category's block. */
+  private mixedCatalog(items: Product[]): Product[] {
+    const order = this.categories.map(category => category.id);
+    const buckets = order.map(id => items.filter(product => product.category === id));
+    const mixed: Product[] = [];
+    const longest = Math.max(0, ...buckets.map(bucket => bucket.length));
+
+    for (let index = 0; index < longest; index++) {
+      for (const bucket of buckets) {
+        const product = bucket[index];
+        if (product) {
+          mixed.push(product);
+        }
+      }
+    }
+
+    const known = new Set(order);
+    return [...mixed, ...items.filter(product => !known.has(product.category))];
   }
 
   selectCategory(category: string): void {

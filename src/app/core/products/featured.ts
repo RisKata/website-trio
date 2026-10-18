@@ -15,7 +15,7 @@ const puffCheese: Product = {
   categoryKey: 'products.category.puff',
   category: 'Puff',
   images: [
-    'products/lisnati-pogachici-so-sirenje/IMG_8578.JPG',
+    'products/lisnati-pogachici-so-sirenje/pogacici-sirenje.png',
     'products/lisnati-pogachici-so-sirenje/IMG_8666.jpg'
   ]
 };
@@ -51,7 +51,10 @@ const croissantPlain: Product = {
   extraKey: 'products.p26.extra',
   categoryKey: 'products.category.puff',
   category: 'Puff',
-  images: ['products/kroasan-blag/placeholder.svg']
+  images: [
+    'products/kroasan-blag/croassant.jpeg',
+    'products/kroasan-blag/half-croassant.jpeg'
+  ]
 };
 
 /** Homepage highlights. Kept separate so the full catalog stays out of the first load. */

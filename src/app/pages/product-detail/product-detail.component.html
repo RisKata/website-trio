@@ -82,16 +82,6 @@
             <p class="block-copy">{{ descKey | t }}</p>
           }
 
-          @if (hasText(ingredientsKey)) {
-            <h2>{{ 'products.details.ingredients' | t }}</h2>
-            <p class="block-copy">{{ ingredientsKey | t }}</p>
-          }
-
-          @if (hasText(preparationKey)) {
-            <h2>{{ 'products.details.preparation' | t }}</h2>
-            <p class="block-copy">{{ preparationKey | t }}</p>
-          }
-
           @if (hasText(nutritionKey)) {
             <h2>{{ 'products.details.nutrition' | t }}</h2>
             @let nutrition = nutritionTable(nutritionKey);
@@ -114,9 +104,9 @@
             }
           }
 
-          @if (hasText(item.extraKey)) {
-            <h2>{{ 'products.details.extra' | t }}</h2>
-            <p class="block-copy">{{ item.extraKey | t }}</p>
+          @if (hasText(preparationKey)) {
+            <h2>{{ 'products.details.preparation' | t }}</h2>
+            <p class="block-copy">{{ preparationKey | t }}</p>
           }
 
           @if (allergensFor(item).length) {
@@ -134,15 +124,57 @@
               </ul>
             </section>
           }
+
+          @if (hasText(ingredientsKey)) {
+            <h2>{{ 'products.details.ingredients' | t }}</h2>
+            <p class="block-copy">{{ ingredientsVisible(ingredientsKey) }}</p>
+            @if (ingredientsCanExpand(ingredientsKey)) {
+              <button
+                type="button"
+                class="show-more"
+                (click)="toggleIngredients()"
+                [attr.aria-expanded]="ingredientsOpen()"
+              >
+                {{ (ingredientsOpen() ? 'products.details.showLess' : 'products.details.showMore') | t }}
+              </button>
+            }
+          }
+
+          @if (hasText(item.extraKey)) {
+            <h2>{{ 'products.details.extra' | t }}</h2>
+            <p class="block-copy">{{ item.extraKey | t }}</p>
+          }
         </div>
       </div>
 
       @if (enlarged()) {
         <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="titleKey | t" (click)="closeImage()">
-          <div class="lightbox-panel" (click)="$event.stopPropagation()">
-            <button type="button" class="lightbox-close" (click)="closeImage()" [attr.aria-label]="'products.lightbox.close' | t">
-              ×
+          @if (images.length > 1) {
+            <button
+              type="button"
+              class="lightbox-nav lightbox-prev"
+              (click)="stepImage(-1, $event)"
+              [attr.aria-label]="'products.lightbox.prev' | t"
+            >
+              <svg viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M7.75 1.5 3.25 6l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </button>
+            <button
+              type="button"
+              class="lightbox-nav lightbox-next"
+              (click)="stepImage(1, $event)"
+              [attr.aria-label]="'products.lightbox.next' | t"
+            >
+              <svg viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M4.25 1.5 8.75 6l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          }
+          <button type="button" class="lightbox-close" (click)="closeImage()" [attr.aria-label]="'products.lightbox.close' | t">
+            ×
+          </button>
+          <div class="lightbox-panel" (click)="$event.stopPropagation()">
             <img [src]="currentImage" [alt]="titleKey | t" />
           </div>
         </div>

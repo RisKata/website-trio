@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 1.35rem;
+  gap: 2.75rem;
   width: 100%;
   min-width: 0;
 }
@@ -172,23 +172,23 @@
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    justify-items: center;
+    justify-items: start;
     gap: 1.75rem;
-    text-align: center;
+    text-align: left;
   }
 
   .footer-main {
-    align-items: center;
+    align-items: stretch;
   }
 
   .footer-links {
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 1.1rem;
   }
 
   .footer-contact,
   .footer-addresses {
-    justify-items: center;
+    justify-items: start;
     width: 100%;
   }
 
@@ -198,8 +198,16 @@
     padding-right: 3.25rem;
   }
 
+  .footer-bottom-inner {
+    justify-content: flex-start;
+
+    p {
+      text-align: left;
+    }
+  }
+
   .footer-line {
-    justify-content: center;
-    max-width: 22rem;
+    justify-content: flex-start;
+    max-width: none;
   }
 }

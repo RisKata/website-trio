@@ -30,6 +30,7 @@
       }
     </nav>
 
+    @for (view of [selectedCategory]; track view) {
     <div class="products-grid">
       @for (product of filteredProducts; track product.id; let index = $index) {
         <a class="product-card" appAnimateOnScroll [routerLink]="['/products', product.id]">
@@ -48,6 +49,7 @@
         </a>
       }
     </div>
+    }
   </div>
 </section>
 
