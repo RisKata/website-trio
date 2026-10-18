@@ -283,6 +283,13 @@
   background: #fff;
   line-height: 0;
 
+  // translateY(0) after the scroll-in animation is still a transform.
+  // Chrome then sends the wheel to the page instead of the Facebook feed.
+  &.animate-hidden,
+  &.animate-visible {
+    transform: none;
+  }
+
   iframe {
     display: block;
     width: 500px;

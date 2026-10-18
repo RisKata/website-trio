@@ -308,11 +308,13 @@ html.a11y-bw .header-dock {
 }
 
 html.a11y-bw .header-inner,
-html.a11y-bw .main-content section,
+html.a11y-bw .main-content section:not(.facebook-feed),
 html.a11y-bw .lightbox,
 html.a11y-bw .social-bar,
 html.a11y-bw .footer,
-html.a11y-bw .scroll-top {
+html.a11y-bw .scroll-top,
+html.a11y-bw .facebook-copy,
+html.a11y-bw .facebook-frame iframe {
   filter: grayscale(1);
 }
 

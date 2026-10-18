@@ -112,7 +112,7 @@ export class SeoService {
           telephone: ['+38948418977', '+38948423279', '+38970934438'],
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Браќа Миладиновци 1-3',
+            streetAddress: 'Александар Македонски бб',
             addressLocality: 'Прилеп',
             postalCode: '7500',
             addressCountry: 'MK'

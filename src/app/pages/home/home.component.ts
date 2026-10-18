@@ -26,7 +26,10 @@ export class HomeComponent {
     'https://www.youtube.com/embed/cb0v78az8kM?si=FQ4rxFNFFJK-dQSM'
   );
 
-  /** Facebook Page Plugin timeline. A custom post grid needs the Graph API and a server. */
+  /**
+   * Facebook Page Plugin feed. `tabs=timeline` no longer renders posts
+   * (the plugin stays on a spinner), so the feed uses `show_posts`.
+   */
   readonly facebookFeedUrl = computed((): SafeResourceUrl | null => {
     if (!this.consent.accepted()) {
       return null;
@@ -35,7 +38,7 @@ export class HomeComponent {
     const locale = { en: 'en_US', mk: 'mk_MK', sq: 'sq_AL' }[this.i18n.currentLang()];
     const href = encodeURIComponent(this.facebookPage);
     return this.sanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.facebook.com/plugins/page.php?href=${href}&tabs=timeline&width=500&height=560&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&locale=${locale}`
+      `https://www.facebook.com/plugins/page.php?href=${href}&show_posts=true&width=500&height=560&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&locale=${locale}`
     );
   });
 
