@@ -1,7 +1,6 @@
 <section class="page-hero">
   <div class="container">
     <h1>{{ 'about.hero.title' | t }}</h1>
-    <p>{{ 'about.hero.tagline' | t }}</p>
   </div>
 </section>
 
@@ -52,8 +51,20 @@
         {{ 'about.quality.systems.before' | t }}<strong>{{ 'about.quality.systems.haccp' | t }}</strong>{{ 'about.quality.systems.mid' | t }}<strong>{{ 'about.quality.systems.iso' | t }}</strong>{{ 'about.quality.systems.after' | t }}
       </p>
       <div class="cert-row">
-        <p class="cert">{{ 'about.quality.badge.haccp' | t }}</p>
-        <p class="cert">{{ 'about.quality.badge.iso' | t }}</p>
+        <img
+          class="cert"
+          src="about/badge-haccp.svg"
+          [alt]="'about.quality.badge.haccp' | t"
+          width="156"
+          height="156"
+        />
+        <img
+          class="cert"
+          src="about/badge-iso.svg"
+          [alt]="'about.quality.badge.iso' | t"
+          width="156"
+          height="156"
+        />
       </div>
       <p>{{ 'about.quality.p4' | t }}</p>
     </div>

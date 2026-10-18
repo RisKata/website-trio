@@ -2,6 +2,24 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <img src="logo.png" alt="Trio 95" class="footer-logo" loading="lazy" />
+      <div class="footer-certs">
+        <a routerLink="/about" fragment="quality" class="footer-cert">
+          <img
+            src="about/badge-haccp.svg"
+            [alt]="'about.quality.badge.haccp' | t"
+            width="52"
+            height="52"
+          />
+        </a>
+        <a routerLink="/about" fragment="quality" class="footer-cert">
+          <img
+            src="about/badge-iso.svg"
+            [alt]="'about.quality.badge.iso' | t"
+            width="52"
+            height="52"
+          />
+        </a>
+      </div>
     </div>
 
     <div class="footer-main">
@@ -45,13 +63,6 @@
 
       <div class="footer-contact">
         <div class="footer-addresses">
-          <a class="footer-line" href="https://maps.app.goo.gl/SjT3fQ9enuZTPqCU7" target="_blank" rel="noopener noreferrer">
-            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
-              <circle cx="12" cy="10" r="2.5" />
-            </svg>
-            <span class="preline">{{ 'contact.address.one.value' | t }}</span>
-          </a>
           <a class="footer-line" href="https://maps.app.goo.gl/1iXvsTBzL6vdhZ6M9" target="_blank" rel="noopener noreferrer">
             <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="HACCP">
+  <defs>
+    <radialGradient id="haccp-face" cx="50%" cy="38%" r="68%">
+      <stop offset="0%" stop-color="#FFFDF6"/>
+      <stop offset="55%" stop-color="#FFF3CC"/>
+      <stop offset="100%" stop-color="#E8C56A"/>
+    </radialGradient>
+  </defs>
+  <polygon fill="#E6C04A" points="80.00,4.00 88.35,16.55 99.67,6.59 104.49,20.87 118.00,14.18 118.96,29.23 133.74,26.26 130.77,41.04 145.82,42.00 139.13,55.51 153.41,60.33 143.45,71.65 156.00,80.00 143.45,88.35 153.41,99.67 139.13,104.49 145.82,118.00 130.77,118.96 133.74,133.74 118.96,130.77 118.00,145.82 104.49,139.13 99.67,153.41 88.35,143.45 80.00,156.00 71.65,143.45 60.33,153.41 55.51,139.13 42.00,145.82 41.04,130.77 26.26,133.74 29.23,118.96 14.18,118.00 20.87,104.49 6.59,99.67 16.55,88.35 4.00,80.00 16.55,71.65 6.59,60.33 20.87,55.51 14.18,42.00 29.23,41.04 26.26,26.26 41.04,29.23 42.00,14.18 55.51,20.87 60.33,6.59 71.65,16.55"/>
+  <circle cx="80" cy="80" r="62" fill="#A67C22"/>
+  <circle cx="80" cy="80" r="57.5" fill="#FFE7A3"/>
+  <circle cx="80" cy="80" r="53.5" fill="#C9A03A"/>
+  <circle cx="80" cy="80" r="50" fill="url(#haccp-face)"/>
+  <circle cx="80" cy="80" r="46" fill="none" stroke="#C9A227" stroke-width="1.15" stroke-dasharray="1.5 3.4" opacity="0.9"/>
+  <circle cx="80" cy="62" r="9" fill="#C4962A"/>
+  <path d="M75.1 62.2l2.7 2.8 6.3-6.6" fill="none" stroke="#FFF8EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="96" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700" fill="#6B5014" letter-spacing="1.2">HACCP</text>
+</svg>

@@ -6,6 +6,7 @@ const puffCheese: Product = {
   descKey: 'products.p01.desc',
   ingredientsKey: 'products.p01.ingredients',
   weightKey: 'products.p01.weight',
+  weightGrams: 500,
   allergens: ['gluten', 'milk', 'egg'],
   diet: 'none',
   preparationKey: 'products.p01.preparation',
@@ -26,6 +27,7 @@ const pizzaCapricciosa: Product = {
   descKey: 'products.p13.desc',
   ingredientsKey: 'products.p13.ingredients',
   weightKey: 'products.p13.weight',
+  weightGrams: 330,
   allergens: ['gluten', 'milk'],
   diet: 'none',
   preparationKey: 'products.p13.preparation',
@@ -34,7 +36,7 @@ const pizzaCapricciosa: Product = {
   extraKey: 'products.p13.extra',
   categoryKey: 'products.category.dough',
   category: 'Dough',
-  images: ['products/pica-kapricioza/IMG_5850.JPG']
+  images: ['products/pica-kapricioza/kapricioza.png']
 };
 
 const croissantPlain: Product = {
@@ -43,6 +45,7 @@ const croissantPlain: Product = {
   descKey: 'products.p26.desc',
   ingredientsKey: 'products.p26.ingredients',
   weightKey: 'products.p26.weight',
+  weightGrams: 500,
   allergens: ['gluten', 'milk', 'egg'],
   diet: 'none',
   preparationKey: 'products.p26.preparation',

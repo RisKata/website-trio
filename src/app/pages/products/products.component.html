@@ -30,6 +30,56 @@
       }
     </nav>
 
+    <div class="category-select">
+      <span class="category-select-label" id="category-select-label">{{ 'products.range.label' | t }}</span>
+      <div class="category-select-control">
+        <button
+          type="button"
+          class="category-select-trigger"
+          [attr.aria-expanded]="categoryMenuOpen"
+          aria-haspopup="listbox"
+          aria-controls="category-select-menu"
+          aria-labelledby="category-select-label"
+          (click)="toggleCategoryMenu($event)"
+        >
+          <span>{{ selectedCategoryKey | t }}</span>
+          <svg class="category-select-chevron" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M3.5 6 8 10.5 12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        @if (categoryMenuOpen) {
+          <ul id="category-select-menu" class="category-select-menu" role="listbox" aria-labelledby="category-select-label">
+            <li>
+              <button
+                type="button"
+                class="category-select-option"
+                role="option"
+                [class.active]="selectedCategory === 'All'"
+                [attr.aria-selected]="selectedCategory === 'All'"
+                (click)="chooseCategory('All')"
+              >
+                {{ 'products.category.all' | t }}
+              </button>
+            </li>
+            @for (category of categories; track category.id) {
+              <li>
+                <button
+                  type="button"
+                  class="category-select-option"
+                  role="option"
+                  [class.active]="selectedCategory === category.id"
+                  [attr.aria-selected]="selectedCategory === category.id"
+                  (click)="chooseCategory(category.id)"
+                >
+                  {{ category.key | t }}
+                </button>
+              </li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+
     @for (view of [selectedCategory]; track view) {
     <div class="products-grid">
       @for (product of filteredProducts; track product.id; let index = $index) {
@@ -41,7 +91,10 @@
               [attr.loading]="index < 4 ? null : 'lazy'"
             />
           </span>
-          <span class="product-category">{{ product.categoryKey | t }}</span>
+          <span class="product-tags">
+            <span class="product-category">{{ product.categoryKey | t }}</span>
+            <span class="product-weight">{{ product.weightGrams }} {{ 'products.weight.unit' | t }}</span>
+          </span>
           <h3>{{ product.nameKey | t }}</h3>
           @if (product.descKey | t) {
             <p>{{ product.descKey | t }}</p>

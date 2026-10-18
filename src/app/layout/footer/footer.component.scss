@@ -12,6 +12,13 @@
   padding: 2.75rem 2.5rem 2.25rem;
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
 .footer-logo {
   display: block;
   height: 92px;
@@ -19,6 +26,24 @@
   margin: 0;
   background: transparent;
   object-fit: contain;
+}
+
+.footer-certs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.footer-cert {
+  display: block;
+  line-height: 0;
+}
+
+.footer-cert img {
+  display: block;
+  width: 52px;
+  height: auto;
 }
 
 .footer-main {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -20,8 +20,10 @@ interface CategoryTile {
 export class ProductsComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly host = inject(ElementRef<HTMLElement>);
 
   selectedCategory = 'All';
+  categoryMenuOpen = false;
 
   constructor() {
     this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(params => {
@@ -38,6 +40,10 @@ export class ProductsComponent {
   ];
 
   products: Product[] = products;
+
+  get selectedCategoryKey(): TranslationKey {
+    return this.categories.find(category => category.id === this.selectedCategory)?.key ?? 'products.category.all';
+  }
 
   get filteredProducts(): Product[] {
     if (this.selectedCategory === 'All') {
@@ -68,10 +74,39 @@ export class ProductsComponent {
 
   selectCategory(category: string): void {
     const next = category === 'All' || this.selectedCategory === category ? null : category;
+    this.selectedCategory = next ?? 'All';
     void this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { category: next },
       queryParamsHandling: 'merge'
     });
+  }
+
+  toggleCategoryMenu(event: Event): void {
+    event.stopPropagation();
+    this.categoryMenuOpen = !this.categoryMenuOpen;
+  }
+
+  chooseCategory(category: string): void {
+    this.categoryMenuOpen = false;
+    if (category !== this.selectedCategory) {
+      this.selectCategory(category);
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  closeCategoryMenuOnOutsideClick(event: Event): void {
+    if (!this.categoryMenuOpen) {
+      return;
+    }
+
+    if (!this.host.nativeElement.contains(event.target as Node)) {
+      this.categoryMenuOpen = false;
+    }
+  }
+
+  @HostListener('document:keydown.escape')
+  closeCategoryMenuOnEscape(): void {
+    this.categoryMenuOpen = false;
   }
 }

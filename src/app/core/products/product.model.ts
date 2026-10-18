@@ -24,6 +24,7 @@ export interface Product {
   descKey: TranslationKey;
   ingredientsKey: TranslationKey;
   weightKey: TranslationKey;
+  weightGrams: number;
   allergens: Allergen[];
   diet: Diet;
   preparationKey: TranslationKey;

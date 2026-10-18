@@ -50,7 +50,10 @@
         </div>
 
         <div class="detail-copy">
-          <span class="product-category">{{ item.categoryKey | t }}</span>
+          <span class="product-tags">
+            <span class="product-category">{{ item.categoryKey | t }}</span>
+            <span class="product-weight">{{ item.weightGrams }} {{ 'products.weight.unit' | t }}</span>
+          </span>
           <h1>{{ titleKey | t }}</h1>
 
           @if (item.flavors?.length) {
@@ -139,44 +142,41 @@
               </button>
             }
           }
-
-          @if (hasText(item.extraKey)) {
-            <h2>{{ 'products.details.extra' | t }}</h2>
-            <p class="block-copy">{{ item.extraKey | t }}</p>
-          }
         </div>
       </div>
 
       @if (enlarged()) {
-        <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="titleKey | t" (click)="closeImage()">
-          @if (images.length > 1) {
-            <button
-              type="button"
-              class="lightbox-nav lightbox-prev"
-              (click)="stepImage(-1, $event)"
-              [attr.aria-label]="'products.lightbox.prev' | t"
-            >
-              <svg viewBox="0 0 12 12" aria-hidden="true">
-                <path d="M7.75 1.5 3.25 6l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              class="lightbox-nav lightbox-next"
-              (click)="stepImage(1, $event)"
-              [attr.aria-label]="'products.lightbox.next' | t"
-            >
-              <svg viewBox="0 0 12 12" aria-hidden="true">
-                <path d="M4.25 1.5 8.75 6l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          }
+        <div class="lightbox" [class.has-nav]="images.length > 1" role="dialog" aria-modal="true" [attr.aria-label]="titleKey | t" (click)="closeImage()">
           <button type="button" class="lightbox-close" (click)="closeImage()" [attr.aria-label]="'products.lightbox.close' | t">
             ×
           </button>
           <div class="lightbox-panel" (click)="$event.stopPropagation()">
             <img [src]="currentImage" [alt]="titleKey | t" />
           </div>
+          @if (images.length > 1) {
+            <div class="lightbox-controls" (click)="$event.stopPropagation()">
+              <button
+                type="button"
+                class="lightbox-nav lightbox-prev"
+                (click)="stepImage(-1, $event)"
+                [attr.aria-label]="'products.lightbox.prev' | t"
+              >
+                <svg viewBox="0 0 12 12" aria-hidden="true">
+                  <path d="M7.75 1.5 3.25 6l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="lightbox-nav lightbox-next"
+                (click)="stepImage(1, $event)"
+                [attr.aria-label]="'products.lightbox.next' | t"
+              >
+                <svg viewBox="0 0 12 12" aria-hidden="true">
+                  <path d="M4.25 1.5 8.75 6l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          }
         </div>
       }
     } @else {
