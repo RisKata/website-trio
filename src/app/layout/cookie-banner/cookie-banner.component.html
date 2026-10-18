@@ -1,9 +1,21 @@
 @if (consent.pending()) {
   <div class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-body">
     <div class="cookie-banner-inner">
-      <div class="cookie-copy">
-        <h2 id="cookie-title">{{ 'cookies.title' | t }}</h2>
-        <p id="cookie-body">{{ 'cookies.body' | t }}</p>
+      <div class="cookie-lead">
+        <span class="cookie-mark">
+          <svg class="cookie-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.2a9.8 9.8 0 1 0 9.8 9.8 3.6 3.6 0 0 1-4.6-4.6A3.6 3.6 0 0 1 12 2.2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+            <circle cx="8.4" cy="9" r="1.05" fill="currentColor" />
+            <circle cx="12.2" cy="12.4" r="1.05" fill="currentColor" />
+            <circle cx="15.6" cy="16" r="0.9" fill="currentColor" />
+            <circle cx="8.6" cy="15.2" r="0.9" fill="currentColor" />
+            <circle cx="14.2" cy="8.6" r="0.75" fill="currentColor" />
+          </svg>
+        </span>
+        <div class="cookie-copy">
+          <h2 id="cookie-title">{{ 'cookies.title' | t }}</h2>
+          <p id="cookie-body">{{ 'cookies.body' | t }}</p>
+        </div>
       </div>
       <div class="cookie-actions">
         <button type="button" class="btn btn-outline cookie-decline" (click)="decline()">

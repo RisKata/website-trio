@@ -32,18 +32,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.55rem;
 }
 
 .footer-cert {
-  display: block;
+  display: grid;
+  place-items: center;
+  width: 73px;
+  height: 73px;
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--color-white);
+  overflow: hidden;
   line-height: 0;
+  flex-shrink: 0;
+}
+
+.footer-cert-iso {
+  padding: 5px;
 }
 
 .footer-cert img {
   display: block;
-  width: 72px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .footer-main {
@@ -197,42 +210,81 @@
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    justify-items: start;
-    gap: 1.75rem;
-    text-align: left;
+    justify-items: center;
+    gap: 2rem;
+    padding: 2.25rem 1.5rem 1.75rem;
+    text-align: center;
   }
 
   .footer-main {
-    align-items: stretch;
-  }
-
-  .footer-links {
-    justify-content: flex-start;
-    column-gap: 1.1rem;
-  }
-
-  .footer-contact,
-  .footer-addresses {
-    justify-items: start;
+    align-items: center;
+    gap: 1.75rem;
     width: 100%;
   }
 
-  .footer-grid,
-  .footer-bottom-inner {
-    padding-left: 3.25rem;
-    padding-right: 3.25rem;
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.8rem;
+    width: min(100%, 16.5rem);
   }
 
-  .footer-bottom-inner {
-    justify-content: flex-start;
+  .footer-links a {
+    justify-content: center;
+    text-align: center;
+  }
 
-    p {
-      text-align: left;
-    }
+  .footer-links a:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.35rem;
+    width: min(100%, 18rem);
+    margin-top: 0.15rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid rgba(255, 252, 248, 0.12);
+    text-align: center;
+  }
+
+  .footer-addresses {
+    align-items: center;
+    width: 100%;
   }
 
   .footer-line {
-    justify-content: flex-start;
-    max-width: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .info-icon {
+    margin-top: 0;
+  }
+
+  .footer-contact .footer-line p,
+  .footer-contact .footer-line a,
+  .preline {
+    text-align: center;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.45rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    p {
+      text-align: center;
+    }
   }
 }
