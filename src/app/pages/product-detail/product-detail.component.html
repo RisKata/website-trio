@@ -53,9 +53,8 @@
         <div class="detail-copy">
           <span class="product-tags">
             <span class="product-category">{{ item.categoryKey | t }}</span>
-            <span class="product-weight">{{ item.weightGrams }} {{ 'products.weight.unit' | t }}</span>
           </span>
-          <h1>{{ titleKey | t }}</h1>
+          <h1>{{ titleKey | t }} - {{ item.weightGrams }} {{ 'products.weight.unit' | t }}</h1>
 
           @if (item.flavors?.length) {
             <section class="flavors" [attr.aria-label]="'products.flavors.title' | t">

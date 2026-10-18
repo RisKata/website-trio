@@ -1,7 +1,13 @@
 .page-hero {
+  /* Shorter than the photo so the sky stays under the header and the trucks fill the cover. */
+  min-height: clamp(18rem, 36vw, 46rem);
   background:
-    linear-gradient(180deg, rgba(74, 44, 22, 0.08) 0%, rgba(74, 44, 22, 0.08) 16%, rgba(58, 32, 16, 0.48) 52%, rgba(42, 24, 12, 0.68) 100%),
-    url('../../../../public/trio-building.png') center 42% / cover no-repeat;
+    linear-gradient(180deg, rgba(42, 24, 12, 0.08) 0%, rgba(42, 24, 12, 0.1) 40%, rgba(42, 24, 12, 0.52) 64%, rgba(42, 24, 12, 0.6) 100%),
+    url('../../../../public/transport.jpg') center top / cover no-repeat;
+
+  h1 {
+    text-shadow: 0 2px 18px rgba(42, 24, 12, 0.75), 0 1px 3px rgba(42, 24, 12, 0.85);
+  }
 }
 
 .contact-layout {

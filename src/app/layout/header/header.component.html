@@ -7,11 +7,11 @@
     }
 
     <nav class="nav" [class.nav-open]="menuOpen && active">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'nav.home' | t }}</a>
-      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.about' | t }}</a>
-      <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.products' | t }}</a>
-      <a routerLink="/horeca" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.horeca' | t }}</a>
-      <a routerLink="/contact" routerLinkActive="active" class="nav-cta" (click)="closeMenu()">{{ 'nav.contact' | t }}</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [attr.title]="'nav.home' | t" (click)="closeMenu()">{{ 'nav.home' | t }}</a>
+      <a routerLink="/about" routerLinkActive="active" [attr.title]="'nav.about' | t" (click)="closeMenu()">{{ 'nav.about' | t }}</a>
+      <a routerLink="/products" routerLinkActive="active" [attr.title]="'nav.products' | t" (click)="closeMenu()">{{ 'nav.products' | t }}</a>
+      <a routerLink="/horeca" routerLinkActive="active" [attr.title]="'nav.horeca' | t" (click)="closeMenu()">{{ 'nav.horeca' | t }}</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-cta" [attr.title]="'nav.contact' | t" (click)="closeMenu()">{{ 'nav.contact' | t }}</a>
     </nav>
 
     <div class="header-actions">
