@@ -8,7 +8,7 @@
   <div class="container">
     <div class="prose" appAnimateOnScroll>
       <p>
-        {{ 'about.intro.before' | t }}<strong>{{ 'about.intro.brand' | t }}</strong>{{ 'about.intro.after' | t }}
+        {{ 'about.intro.before' | t }}{{ 'about.intro.brand' | t }}{{ 'about.intro.after' | t }}
       </p>
       <p>{{ 'about.intro.p2' | t }}</p>
       <p>{{ 'about.intro.p3' | t }}</p>
@@ -55,6 +55,7 @@
           class="cert"
           src="haccp.png"
           [alt]="'about.quality.badge.haccp' | t"
+          [attr.title]="'about.quality.badge.haccp' | t"
           width="1126"
           height="1072"
         />
@@ -62,6 +63,7 @@
           class="cert"
           src="iso.png"
           [alt]="'about.quality.badge.iso' | t"
+          [attr.title]="'about.quality.badge.iso' | t"
           width="473"
           height="500"
         />

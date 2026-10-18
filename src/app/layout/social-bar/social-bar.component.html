@@ -12,7 +12,8 @@
             [href]="link.href"
             target="_blank"
             rel="noopener noreferrer"
-            [attr.aria-label]="link.labelKey | t">
+            [attr.aria-label]="link.labelKey | t"
+            [attr.title]="(link.labelKey | t) + ' — ' + ('link.newTab' | t)">
             @switch (link.id) {
               @case ('facebook') {
                 <svg viewBox="0 0 24 24" aria-hidden="true">

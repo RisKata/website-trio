@@ -40,6 +40,7 @@
           aria-haspopup="listbox"
           aria-controls="category-select-menu"
           aria-labelledby="category-select-label"
+          [attr.title]="selectedCategoryKey | t"
           (click)="toggleCategoryMenu($event)"
         >
           <span>{{ selectedCategoryKey | t }}</span>

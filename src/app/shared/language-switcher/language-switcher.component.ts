@@ -1,10 +1,11 @@
 import { Component, ElementRef, HostListener, inject } from '@angular/core';
-import { Language, languages } from '../../core/i18n/translations';
+import { Language, languages, TranslationKey } from '../../core/i18n/translations';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { TranslationService } from '../../core/i18n/translation.service';
 
 @Component({
   selector: 'app-language-switcher',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './language-switcher.component.html',
   styleUrl: './language-switcher.component.scss'
 })
@@ -20,6 +21,10 @@ export class LanguageSwitcherComponent {
 
   get currentLabel(): string {
     return this.languages.find((lang) => lang.code === this.currentLang())?.label ?? '';
+  }
+
+  get currentNameKey(): TranslationKey {
+    return this.languages.find((lang) => lang.code === this.currentLang())?.nameKey ?? 'lang.label';
   }
 
   toggle(event: Event): void {

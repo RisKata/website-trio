@@ -4,7 +4,8 @@
     class="lang-trigger"
     [attr.aria-expanded]="open"
     aria-haspopup="listbox"
-    aria-label="Language"
+    [attr.aria-label]="'lang.label' | t"
+    [attr.title]="currentNameKey | t"
     (click)="toggle($event)"
   >
     {{ currentLabel }}
@@ -14,7 +15,7 @@
   </button>
 
   @if (open) {
-    <ul class="lang-menu" role="listbox" aria-label="Language">
+    <ul class="lang-menu" role="listbox" [attr.aria-label]="'lang.label' | t">
       @for (lang of languages; track lang.code) {
         <li>
           <button
@@ -23,6 +24,7 @@
             role="option"
             [class.active]="currentLang() === lang.code"
             [attr.aria-selected]="currentLang() === lang.code"
+            [attr.title]="lang.nameKey | t"
             (click)="select(lang.code)"
           >
             {{ lang.label }}

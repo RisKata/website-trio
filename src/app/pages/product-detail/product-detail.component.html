@@ -16,7 +16,7 @@
       <div class="detail-layout">
         <div class="gallery">
           <div class="gallery-frame">
-            <button type="button" class="gallery-stage" (click)="openImage()" [attr.aria-label]="'products.gallery.enlarge' | t">
+            <button type="button" class="gallery-stage" (click)="openImage()" [attr.aria-label]="'products.gallery.enlarge' | t" [attr.title]="'products.gallery.enlarge' | t">
               <img [src]="currentImage" [alt]="titleKey | t" />
             </button>
             @if (dietFor(item); as diet) {
@@ -38,7 +38,8 @@
                   class="thumb"
                   [class.active]="activeImage() === index"
                   [attr.aria-pressed]="activeImage() === index"
-                  [attr.aria-label]="'products.gallery.enlarge' | t"
+                  [attr.aria-label]="('products.gallery.image' | t) + ' ' + (index + 1)"
+                  [attr.title]="('products.gallery.image' | t) + ' ' + (index + 1)"
                   (click)="selectImage(index)"
                 >
                   <img [src]="image" [alt]="titleKey | t" [attr.loading]="index === 0 ? null : 'lazy'" />
@@ -147,7 +148,7 @@
 
       @if (enlarged()) {
         <div class="lightbox" [class.has-nav]="images.length > 1" role="dialog" aria-modal="true" [attr.aria-label]="titleKey | t" (click)="closeImage()">
-          <button type="button" class="lightbox-close" (click)="closeImage()" [attr.aria-label]="'products.lightbox.close' | t">
+          <button type="button" class="lightbox-close" (click)="closeImage()" [attr.aria-label]="'products.lightbox.close' | t" [attr.title]="'products.lightbox.close' | t">
             ×
           </button>
           <div class="lightbox-panel" (click)="$event.stopPropagation()">
@@ -160,6 +161,7 @@
                 class="lightbox-nav lightbox-prev"
                 (click)="stepImage(-1, $event)"
                 [attr.aria-label]="'products.lightbox.prev' | t"
+                [attr.title]="'products.lightbox.prev' | t"
               >
                 <svg viewBox="0 0 12 12" aria-hidden="true">
                   <path d="M7.75 1.5 3.25 6l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -170,6 +172,7 @@
                 class="lightbox-nav lightbox-next"
                 (click)="stepImage(1, $event)"
                 [attr.aria-label]="'products.lightbox.next' | t"
+                [attr.title]="'products.lightbox.next' | t"
               >
                 <svg viewBox="0 0 12 12" aria-hidden="true">
                   <path d="M4.25 1.5 8.75 6l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

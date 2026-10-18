@@ -42,7 +42,7 @@
     <div class="story-video">
       <iframe
         [src]="videoUrl"
-        title="YouTube video player"
+        [title]="'home.video.title' | t"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
@@ -101,7 +101,7 @@
       <h2 class="section-title">{{ 'home.facebook.title' | t }}</h2>
       <p class="section-subtitle">{{ 'home.facebook.subtitle' | t }}</p>
       @if (facebookFeedUrl()) {
-        <a class="btn btn-primary" [href]="facebookPage" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn-primary" [href]="facebookPage" target="_blank" rel="noopener noreferrer" [attr.title]="'link.newTab' | t">
           {{ 'home.facebook.link' | t }}
         </a>
       } @else {
@@ -110,7 +110,7 @@
           <button type="button" class="btn btn-primary" (click)="openCookieSettings()">
             {{ 'cookies.manage' | t }}
           </button>
-          <a class="facebook-page-link" [href]="facebookPage" target="_blank" rel="noopener noreferrer">
+          <a class="facebook-page-link" [href]="facebookPage" target="_blank" rel="noopener noreferrer" [attr.title]="'link.newTab' | t">
             {{ 'home.facebook.link' | t }}
           </a>
         </div>
@@ -121,7 +121,7 @@
       <div class="facebook-frame" appAnimateOnScroll>
         <iframe
           [src]="feedUrl"
-          title="Trio 95 Facebook"
+          [title]="'home.facebook.frame' | t"
           width="500"
           height="560"
           scrolling="no"

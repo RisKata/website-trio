@@ -1,7 +1,7 @@
 <ng-template #navBar let-showLogo="showLogo" let-active="active">
   <div class="container header-inner">
     @if (showLogo) {
-      <a routerLink="/" class="logo" (click)="closeMenu()">
+      <a routerLink="/" class="logo" [attr.title]="'nav.home' | t" (click)="closeMenu()">
         <img src="logo.png" alt="Trio 95" class="logo-img" />
       </a>
     }
@@ -22,7 +22,8 @@
         type="button"
         [class.open]="menuOpen && active"
         [attr.aria-expanded]="menuOpen && active"
-        aria-label="Toggle navigation menu"
+        [attr.aria-label]="(menuOpen && active ? 'nav.menu.close' : 'nav.menu.open') | t"
+        [attr.title]="(menuOpen && active ? 'nav.menu.close' : 'nav.menu.open') | t"
         (click)="toggleMenu()"
       >
         <span></span>
@@ -59,6 +60,7 @@
   [class.active]="a11y.mono()"
   [attr.aria-pressed]="a11y.mono()"
   [attr.aria-label]="a11yLabel() | t"
+  [attr.title]="a11yLabel() | t"
   (click)="a11y.toggle()"
 >
   <svg viewBox="7.6 5 9 14.6" aria-hidden="true">
