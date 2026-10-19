@@ -6,7 +6,7 @@ const puffCheese: Product = {
   descKey: 'products.p01.desc',
   ingredientsKey: 'products.p01.ingredients',
   weightKey: 'products.p01.weight',
-  weightGrams: 500,
+  weightGrams: 1000,
   allergens: ['gluten', 'milk', 'egg'],
   diet: 'none',
   preparationKey: 'products.p01.preparation',
@@ -57,7 +57,11 @@ const croissantPlain: Product = {
   images: [
     'products/kroasan-blag/croassant.jpeg',
     'products/kroasan-blag/half-croassant.jpeg'
-  ]
+  ],
+  horeca: {
+    pieceKey: 'products.horeca.piece.30g',
+    packKey: 'products.horeca.pack.10kg'
+  }
 };
 
 /** Homepage highlights. Kept separate so the full catalog stays out of the first load. */

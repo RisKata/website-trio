@@ -28,6 +28,15 @@
           {{ category.key | t }}
         </button>
       }
+      <button
+        type="button"
+        class="category-link"
+        [class.active]="selectedCategory === 'Horeca'"
+        [attr.aria-pressed]="selectedCategory === 'Horeca'"
+        (click)="selectCategory('Horeca')"
+      >
+        {{ 'products.horeca.tag' | t }}
+      </button>
     </nav>
 
     <div class="category-select">
@@ -76,6 +85,18 @@
                 </button>
               </li>
             }
+            <li>
+              <button
+                type="button"
+                class="category-select-option"
+                role="option"
+                [class.active]="selectedCategory === 'Horeca'"
+                [attr.aria-selected]="selectedCategory === 'Horeca'"
+                (click)="chooseCategory('Horeca')"
+              >
+                {{ 'products.horeca.tag' | t }}
+              </button>
+            </li>
           </ul>
         }
       </div>
@@ -84,7 +105,12 @@
     @for (view of [selectedCategory]; track view) {
     <div class="products-grid">
       @for (product of filteredProducts; track product.id; let index = $index) {
-        <a class="product-card" appAnimateOnScroll [routerLink]="['/products', product.id]">
+        <a
+          class="product-card"
+          appAnimateOnScroll
+          [routerLink]="['/products', product.id]"
+          [queryParams]="selectedCategory === 'All' ? null : { category: selectedCategory }"
+        >
           <span class="product-image">
             <img
               [src]="product.images[0]"
@@ -94,6 +120,9 @@
           </span>
           <span class="product-tags">
             <span class="product-category">{{ product.categoryKey | t }}</span>
+            @if (product.horeca) {
+              <span class="product-category horeca-tag">{{ 'products.horeca.tag' | t }}</span>
+            }
           </span>
           <h3>{{ product.nameKey | t }} - {{ product.weightGrams }} {{ 'products.weight.unit' | t }}</h3>
           @if (product.descKey | t) {

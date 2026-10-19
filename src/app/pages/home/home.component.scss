@@ -212,6 +212,19 @@
     margin-bottom: 0.5rem;
   }
 
+  .horeca-tag {
+    display: inline-block;
+    margin: 0 1.5rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    background: var(--color-bg-alt);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+  }
+
   p {
     padding: 0 1.5rem 1.5rem;
     margin: 0;

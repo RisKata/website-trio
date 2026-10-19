@@ -177,6 +177,48 @@
   border-radius: 999px;
 }
 
+.horeca-tag {
+  text-transform: uppercase;
+}
+
+.horeca-pack {
+  h2 {
+    margin-top: 0.35rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  dl {
+    margin: 0.15rem 0 0;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--color-beige-dark);
+  }
+
+  div:last-child {
+    border-bottom: 0;
+  }
+
+  dt,
+  dd {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+  }
+
+  dd {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
 .block-copy,
 .nutrition {
   white-space: pre-line;

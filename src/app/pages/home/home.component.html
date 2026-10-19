@@ -82,6 +82,9 @@
           <div class="preview-image">
             <img [src]="product.images[0]" [alt]="product.nameKey | t" loading="lazy" />
           </div>
+          @if (product.horeca) {
+            <span class="horeca-tag">{{ 'products.horeca.tag' | t }}</span>
+          }
           <h3>{{ product.nameKey | t }}</h3>
           @if (product.descKey | t) {
             <p>{{ product.descKey | t }}</p>

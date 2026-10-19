@@ -4,6 +4,11 @@ export type Diet = 'vegetarian' | 'vegan' | 'none';
 export type Allergen = 'gluten' | 'milk' | 'soy' | 'egg' | 'mustard' | 'sesame';
 export type ProductMark = 'vegetarian' | 'vegan' | Allergen;
 
+export interface HorecaSpec {
+  pieceKey: TranslationKey;
+  packKey: TranslationKey;
+}
+
 export interface ProductFlavor {
   id: string;
   nameKey: TranslationKey;
@@ -35,4 +40,5 @@ export interface Product {
   category: 'Puff' | 'Dough' | 'Fry';
   images: string[];
   flavors?: ProductFlavor[];
+  horeca?: HorecaSpec;
 }

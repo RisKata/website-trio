@@ -29,7 +29,9 @@ export class ProductsComponent {
     this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(params => {
       const category = params.get('category');
       this.selectedCategory =
-        category === 'Puff' || category === 'Dough' || category === 'Fry' ? category : 'All';
+        category === 'Puff' || category === 'Dough' || category === 'Fry' || category === 'Horeca'
+          ? category
+          : 'All';
     });
   }
 
@@ -42,12 +44,18 @@ export class ProductsComponent {
   products: Product[] = products;
 
   get selectedCategoryKey(): TranslationKey {
+    if (this.selectedCategory === 'Horeca') {
+      return 'products.horeca.tag';
+    }
     return this.categories.find(category => category.id === this.selectedCategory)?.key ?? 'products.category.all';
   }
 
   get filteredProducts(): Product[] {
     if (this.selectedCategory === 'All') {
       return this.mixedCatalog(this.products);
+    }
+    if (this.selectedCategory === 'Horeca') {
+      return this.products.filter(product => product.horeca);
     }
     return this.products.filter(p => p.category === this.selectedCategory);
   }
@@ -73,8 +81,11 @@ export class ProductsComponent {
   }
 
   selectCategory(category: string): void {
-    const next = category === 'All' || this.selectedCategory === category ? null : category;
-    this.selectedCategory = next ?? 'All';
+    if (this.selectedCategory === category) {
+      return;
+    }
+    const next = category === 'All' ? null : category;
+    this.selectedCategory = category;
     void this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { category: next },

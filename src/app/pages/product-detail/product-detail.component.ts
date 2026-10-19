@@ -68,6 +68,14 @@ export class ProductDetailComponent implements OnDestroy {
     return flavor?.images?.length ? flavor.images : product.images;
   }
 
+  backQuery(): { category: string } | null {
+    const category = this.route.snapshot.queryParamMap.get('category');
+    if (category === 'Puff' || category === 'Dough' || category === 'Fry' || category === 'Horeca') {
+      return { category };
+    }
+    return null;
+  }
+
   titleFor(product: Product): TranslationKey {
     const flavor = product.flavors?.[this.flavorIndex()];
     return flavor?.titleKey ?? product.nameKey;

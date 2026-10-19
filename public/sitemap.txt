@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Live-domain sitemap. At go-live, delete sitemap.xml and rename this file to sitemap.xml. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.trio.mk/</loc></url>
+  <url><loc>https://www.trio.mk/about</loc></url>
+  <url><loc>https://www.trio.mk/products</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-cheese</loc></url>
+  <url><loc>https://www.trio.mk/products/pizza-capricciosa</loc></url>
+  <url><loc>https://www.trio.mk/products/croissant-plain</loc></url>
+  <url><loc>https://www.trio.mk/horeca</loc></url>
+  <url><loc>https://www.trio.mk/contact</loc></url>
+  <url><loc>https://www.trio.mk/products/mini-puff-cheese</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-kashkaval</loc></url>
+  <url><loc>https://www.trio.mk/products/mini-puff-kashkaval</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-spinach-cheese</loc></url>
+  <url><loc>https://www.trio.mk/products/mini-puff-spinach-cheese</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-pizza</loc></url>
+  <url><loc>https://www.trio.mk/products/mini-puff-pizza</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-apple-cinnamon</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-cherry</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-olives-mushrooms</loc></url>
+  <url><loc>https://www.trio.mk/products/mini-puff-olives-mushrooms</loc></url>
+  <url><loc>https://www.trio.mk/products/piroshki-pork</loc></url>
+  <url><loc>https://www.trio.mk/products/piroshki-chicken</loc></url>
+  <url><loc>https://www.trio.mk/products/piroshki-cheese</loc></url>
+  <url><loc>https://www.trio.mk/products/piroshki-kashkaval</loc></url>
+  <url><loc>https://www.trio.mk/products/pizza-dough</loc></url>
+  <url><loc>https://www.trio.mk/products/pizza-venezia</loc></url>
+  <url><loc>https://www.trio.mk/products/mini-pizza-ham</loc></url>
+  <url><loc>https://www.trio.mk/products/mini-pizza-chicken</loc></url>
+  <url><loc>https://www.trio.mk/products/my-pizza</loc></url>
+  <url><loc>https://www.trio.mk/products/breaded-kashkaval</loc></url>
+  <url><loc>https://www.trio.mk/products/breaded-zdenki</loc></url>
+  <url><loc>https://www.trio.mk/products/croquettes-cheese</loc></url>
+  <url><loc>https://www.trio.mk/products/croquettes-kashkaval</loc></url>
+  <url><loc>https://www.trio.mk/products/my-rolls</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-furka</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-sheet</loc></url>
+  <url><loc>https://www.trio.mk/products/puff-zhuzhu</loc></url>
+  <url><loc>https://www.trio.mk/products/lenten-rolls</loc></url>
+</urlset>

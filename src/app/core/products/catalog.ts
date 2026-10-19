@@ -10,7 +10,7 @@ export const products: Product[] = [
     nameKey: 'products.p28.name',
     descKey: 'products.p01.desc',
     ingredientsKey: 'products.p01.ingredients',
-    weightKey: 'products.p01.weight',
+    weightKey: 'products.p28.weight',
     weightGrams: 500,
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
@@ -31,7 +31,7 @@ export const products: Product[] = [
     descKey: 'products.p02.desc',
     ingredientsKey: 'products.p02.ingredients',
     weightKey: 'products.p02.weight',
-    weightGrams: 500,
+    weightGrams: 1000,
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p02.preparation',
@@ -50,7 +50,7 @@ export const products: Product[] = [
     nameKey: 'products.p29.name',
     descKey: 'products.p02.desc',
     ingredientsKey: 'products.p02.ingredients',
-    weightKey: 'products.p02.weight',
+    weightKey: 'products.p29.weight',
     weightGrams: 500,
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
@@ -71,7 +71,7 @@ export const products: Product[] = [
     descKey: 'products.p03.desc',
     ingredientsKey: 'products.p03.ingredients',
     weightKey: 'products.p03.weight',
-    weightGrams: 500,
+    weightGrams: 1000,
     allergens: ['gluten', 'milk'],
     diet: 'none',
     preparationKey: 'products.p03.preparation',
@@ -87,7 +87,7 @@ export const products: Product[] = [
     nameKey: 'products.p31.name',
     descKey: 'products.p03.desc',
     ingredientsKey: 'products.p03.ingredients',
-    weightKey: 'products.p03.weight',
+    weightKey: 'products.p31.weight',
     weightGrams: 500,
     allergens: ['gluten', 'milk'],
     diet: 'none',
@@ -105,7 +105,7 @@ export const products: Product[] = [
     descKey: 'products.p04.desc',
     ingredientsKey: 'products.p04.ingredients',
     weightKey: 'products.p04.weight',
-    weightGrams: 500,
+    weightGrams: 1000,
     allergens: ['gluten', 'egg'],
     diet: 'none',
     preparationKey: 'products.p04.preparation',
@@ -124,7 +124,7 @@ export const products: Product[] = [
     nameKey: 'products.p30.name',
     descKey: 'products.p04.desc',
     ingredientsKey: 'products.p04.ingredients',
-    weightKey: 'products.p04.weight',
+    weightKey: 'products.p30.weight',
     weightGrams: 500,
     allergens: ['gluten', 'egg'],
     diet: 'none',
@@ -145,7 +145,7 @@ export const products: Product[] = [
     descKey: 'products.p05.desc',
     ingredientsKey: 'products.p05.ingredients',
     weightKey: 'products.p05.weight',
-    weightGrams: 500,
+    weightGrams: 1000,
     allergens: ['gluten'],
     diet: 'none',
     preparationKey: 'products.p05.preparation',
@@ -166,7 +166,7 @@ export const products: Product[] = [
     descKey: 'products.p06.desc',
     ingredientsKey: 'products.p06.ingredients',
     weightKey: 'products.p06.weight',
-    weightGrams: 500,
+    weightGrams: 1000,
     allergens: ['gluten'],
     diet: 'none',
     preparationKey: 'products.p06.preparation',
@@ -235,7 +235,11 @@ export const products: Product[] = [
     images: [
       'products/piroshki-so-svinska-shunka/piroski-sunka.png',
       'products/piroshki-so-svinska-shunka/IMG_9146.JPG'
-    ]
+    ],
+    horeca: {
+      pieceKey: 'products.horeca.piece.100g',
+      packKey: 'products.horeca.pack.50pcs'
+    }
   },
   {
     id: 'piroshki-chicken',
@@ -255,7 +259,11 @@ export const products: Product[] = [
     images: [
       'products/piroshki-so-pileshka-shunka/piroslki-pileska-sunka.png',
       'products/piroshki-so-pileshka-shunka/IMG_9146.JPG'
-    ]
+    ],
+    horeca: {
+      pieceKey: 'products.horeca.piece.100g',
+      packKey: 'products.horeca.pack.50pcs'
+    }
   },
   {
     id: 'piroshki-cheese',
@@ -272,7 +280,11 @@ export const products: Product[] = [
     extraKey: 'products.p10.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/piroshki-sirenje/IMG_9333.JPG']
+    images: ['products/piroshki-sirenje/IMG_9333.JPG'],
+    horeca: {
+      pieceKey: 'products.horeca.piece.100g',
+      packKey: 'products.horeca.pack.50pcs'
+    }
   },
   {
     id: 'piroshki-kashkaval',
@@ -281,7 +293,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p11.ingredients',
     weightKey: 'products.p11.weight',
     weightGrams: 400,
-    allergens: [],
+    allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p11.preparation',
     nutritionKey: 'products.p11.nutrition',
@@ -292,7 +304,11 @@ export const products: Product[] = [
     images: [
       'products/piroshki-kashkaval/piroski-kaskaval.png',
       'products/piroshki-kashkaval/IMG_9381.jpg'
-    ]
+    ],
+    horeca: {
+      pieceKey: 'products.horeca.piece.100g',
+      packKey: 'products.horeca.pack.50pcs'
+    }
   },
   {
     id: 'pizza-dough',
@@ -300,7 +316,7 @@ export const products: Product[] = [
     descKey: 'products.p12.desc',
     ingredientsKey: 'products.p12.ingredients',
     weightKey: 'products.p12.weight',
-    weightGrams: 480,
+    weightGrams: 180,
     allergens: ['gluten'],
     diet: 'none',
     preparationKey: 'products.p12.preparation',
@@ -369,7 +385,7 @@ export const products: Product[] = [
     descKey: 'products.p17.desc',
     ingredientsKey: 'products.p17.ingredients',
     weightKey: 'products.p17.weight',
-    weightGrams: 330,
+    weightGrams: 270,
     allergens: ['gluten', 'milk'],
     diet: 'none',
     preparationKey: 'products.p17.preparation',
@@ -387,7 +403,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p18.ingredients',
     weightKey: 'products.p18.weight',
     weightGrams: 250,
-    allergens: [],
+    allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p18.preparation',
     nutritionKey: 'products.p18.nutrition',
@@ -395,7 +411,11 @@ export const products: Product[] = [
     extraKey: 'products.p18.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/kashkaval-pohovan/panedCascaval.png']
+    images: ['products/kashkaval-pohovan/panedCascaval.png'],
+    horeca: {
+      pieceKey: 'products.horeca.piece.40-80g',
+      packKey: 'products.horeca.pack.8kg'
+    }
   },
   {
     id: 'breaded-zdenki',
@@ -404,7 +424,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p19.ingredients',
     weightKey: 'products.p19.weight',
     weightGrams: 280,
-    allergens: [],
+    allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p19.preparation',
     nutritionKey: 'products.p19.nutrition',
@@ -412,7 +432,11 @@ export const products: Product[] = [
     extraKey: 'products.p19.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/zdenki-pohovani/zdenki.jpeg']
+    images: ['products/zdenki-pohovani/zdenki.jpeg'],
+    horeca: {
+      pieceKey: 'products.horeca.piece.27g',
+      packKey: 'products.horeca.pack.8kg'
+    }
   },
   {
     id: 'croquettes-cheese',
@@ -420,7 +444,7 @@ export const products: Product[] = [
     descKey: 'products.p20.desc',
     ingredientsKey: 'products.p20.ingredients',
     weightKey: 'products.p20.weight',
-    weightGrams: 320,
+    weightGrams: 400,
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p20.preparation',
@@ -432,7 +456,11 @@ export const products: Product[] = [
     images: [
       'products/kroketi-so-sirenje/kroketi-sirenje.png',
       'products/kroketi-so-sirenje/kroketi.jpg'
-    ]
+    ],
+    horeca: {
+      pieceKey: 'products.horeca.piece.20g',
+      packKey: 'products.horeca.pack.8kg'
+    }
   },
   {
     id: 'croquettes-kashkaval',
@@ -440,7 +468,7 @@ export const products: Product[] = [
     descKey: 'products.p21.desc',
     ingredientsKey: 'products.p21.ingredients',
     weightKey: 'products.p21.weight',
-    weightGrams: 340,
+    weightGrams: 400,
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p21.preparation',
@@ -452,7 +480,11 @@ export const products: Product[] = [
     images: [
       'products/kroketi-so-kashkaval/kroketi-kaskaval.png',
       'products/kroketi-so-kashkaval/kroketi-kaskaval.jpg'
-    ]
+    ],
+    horeca: {
+      pieceKey: 'products.horeca.piece.20g',
+      packKey: 'products.horeca.pack.8kg'
+    }
   },
   {
     id: 'my-rolls',
@@ -460,7 +492,7 @@ export const products: Product[] = [
     descKey: 'products.p22.desc',
     ingredientsKey: 'products.p22.ingredients',
     weightKey: 'products.p22.weight',
-    weightGrams: 600,
+    weightGrams: 800,
     allergens: ['gluten', 'sesame', 'milk'],
     diet: 'none',
     preparationKey: 'products.p22.preparation',
@@ -472,7 +504,11 @@ export const products: Product[] = [
     images: [
       'products/moite-kifli/kifli.png',
       'products/moite-kifli/moite-kifli.jpg'
-    ]
+    ],
+    horeca: {
+      pieceKey: 'products.horeca.piece.30g',
+      packKey: 'products.horeca.pack.10kg'
+    }
   },
   {
     id: 'puff-furka',
