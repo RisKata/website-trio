@@ -1,0 +1,28 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>{{ 'catalog.hero.title' | t }}</h1>
+    <p>{{ 'catalog.hero.subtitle' | t }}</p>
+    <a class="btn btn-primary catalog-download" [href]="pdfPath" [attr.download]="pdfName">
+      {{ 'catalog.download' | t }}
+    </a>
+  </div>
+</section>
+
+<section class="section viewer" id="preview">
+  <div class="container">
+    <iframe class="pdf-frame" [src]="pdfSrc" [title]="'catalog.preview' | t"></iframe>
+  </div>
+</section>
+
+<section class="section cta-banner">
+  <div class="container cta-inner" appAnimateOnScroll>
+    <div>
+      <h2>{{ 'catalog.cta.title' | t }}</h2>
+      <p>{{ 'catalog.cta.body' | t }}</p>
+    </div>
+    <div class="cta-actions">
+      <a routerLink="/products" class="btn btn-primary">{{ 'catalog.cta.products' | t }}</a>
+      <a routerLink="/contact" class="btn btn-outline">{{ 'catalog.cta.contact' | t }}</a>
+    </div>
+  </div>
+</section>

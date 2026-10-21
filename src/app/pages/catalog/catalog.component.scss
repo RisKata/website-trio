@@ -1,0 +1,67 @@
+.page-hero {
+  background:
+    linear-gradient(180deg, rgba(74, 44, 22, 0.08) 0%, rgba(74, 44, 22, 0.08) 16%, rgba(58, 32, 16, 0.48) 52%, rgba(42, 24, 12, 0.68) 100%),
+    url('../../../../public/cover/zuzu.JPG') center 42% / cover no-repeat;
+}
+
+.catalog-download {
+  margin-top: 1.5rem;
+}
+
+.viewer {
+  padding-top: 2.5rem;
+  background:
+    linear-gradient(180deg, transparent 0, var(--color-bg-alt) 4.5rem);
+}
+
+.pdf-frame {
+  display: block;
+  width: 100%;
+  height: min(85vh, 64rem);
+  border: 1px solid var(--color-beige-dark);
+  border-radius: 1rem;
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 52%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+  }
+
+  p {
+    margin: 0;
+    max-width: 36rem;
+    opacity: 0.92;
+  }
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cta-banner .btn-primary {
+  background: var(--color-cream);
+  color: var(--color-primary-dark);
+  box-shadow: none;
+}
+
+.cta-banner .btn-primary:hover {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+}

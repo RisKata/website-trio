@@ -20,6 +20,7 @@ const PAGES: SeoPage[] = [
   { path: '', titleKey: 'seo.home.title', descriptionKey: 'seo.home.description', navKey: 'nav.home' },
   { path: 'about', titleKey: 'seo.about.title', descriptionKey: 'seo.about.description', navKey: 'nav.about' },
   { path: 'products', titleKey: 'seo.products.title', descriptionKey: 'seo.products.description', navKey: 'nav.products' },
+  { path: 'catalog', titleKey: 'seo.catalog.title', descriptionKey: 'seo.catalog.description', navKey: 'nav.catalog' },
   { path: 'horeca', titleKey: 'seo.horeca.title', descriptionKey: 'seo.horeca.description', navKey: 'nav.horeca' },
   { path: 'contact', titleKey: 'seo.contact.title', descriptionKey: 'seo.contact.description', navKey: 'nav.contact' }
 ];

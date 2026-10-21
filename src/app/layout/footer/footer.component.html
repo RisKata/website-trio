@@ -47,6 +47,13 @@
           </svg>
           <span>{{ 'nav.products' | t }}</span>
         </a>
+        <a routerLink="/catalog" [attr.title]="'nav.catalog' | t">
+          <svg class="link-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="m10.2 8.2 3.8 3.8-3.8 3.8" />
+          </svg>
+          <span>{{ 'nav.catalog' | t }}</span>
+        </a>
         <a routerLink="/horeca" [attr.title]="'nav.horeca' | t">
           <svg class="link-mark" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="9" />

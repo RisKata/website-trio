@@ -80,7 +80,10 @@ export const products: Product[] = [
     extraKey: 'products.p03.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-spanakj-i-sirenje/IMG_7920.JPG']
+    images: [
+      'products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png',
+      'products/lisnati-pogachici-so-spanakj-i-sirenje/IMG_7920.JPG'
+    ]
   },
   {
     id: 'mini-puff-spinach-cheese',
@@ -97,7 +100,10 @@ export const products: Product[] = [
     extraKey: 'products.p03.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-spanakj-i-sirenje/IMG_7920.JPG']
+    images: [
+      'products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png',
+      'products/lisnati-pogachici-so-spanakj-i-sirenje/IMG_7920.JPG'
+    ]
   },
   {
     id: 'puff-pizza',
@@ -155,10 +161,9 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-    'products/lisnati-pogachici-so-jabolko-i-cimet/IMG_7895.JPG',
-    'products/lisnati-pogachici-so-jabolko-i-cimet/IMG_7890.JPG',
-    'products/lisnati-pogachici-so-jabolko-i-cimet/IMG_8404.jpg'
-  ]
+      'products/lisnati-pogachici-so-jabolko-i-cimet/pogacici-jabolko.png',
+      'products/lisnati-pogachici-so-jabolko-i-cimet/IMG_8404.jpg'
+    ]
   },
   {
     id: 'puff-cherry',
@@ -175,7 +180,10 @@ export const products: Product[] = [
     extraKey: 'products.p06.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-vishna/IMG_8410.jpg']
+    images: [
+      'products/lisnati-pogachici-so-vishna/visni.png',
+      'products/lisnati-pogachici-so-vishna/IMG_8410.jpg'
+    ]
   },
   {
     id: 'puff-olives-mushrooms',
@@ -280,7 +288,7 @@ export const products: Product[] = [
     extraKey: 'products.p10.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/piroshki-sirenje/IMG_9333.JPG'],
+    images: ['products/piroshki-sirenje/IMG_0732.jpg'],
     horeca: {
       pieceKey: 'products.horeca.piece.100g',
       packKey: 'products.horeca.pack.50pcs'
@@ -325,7 +333,7 @@ export const products: Product[] = [
     extraKey: 'products.p12.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/polupecheno-testo-za-pica/testo-za-pica.jpeg']
+    images: ['products/polupecheno-testo-za-pica/testo-za-pica.jpg']
   },
   pizzaCapricciosa,
   {
@@ -411,7 +419,7 @@ export const products: Product[] = [
     extraKey: 'products.p18.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/kashkaval-pohovan/panedCascaval.png'],
+    images: ['products/kashkaval-pohovan/IMG_0575.jpg'],
     horeca: {
       pieceKey: 'products.horeca.piece.40-80g',
       packKey: 'products.horeca.pack.8kg'
@@ -432,7 +440,7 @@ export const products: Product[] = [
     extraKey: 'products.p19.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/zdenki-pohovani/zdenki.jpeg'],
+    images: ['products/zdenki-pohovani/IMG_0744.jpg'],
     horeca: {
       pieceKey: 'products.horeca.piece.27g',
       packKey: 'products.horeca.pack.8kg'
@@ -503,7 +511,7 @@ export const products: Product[] = [
     category: 'Puff',
     images: [
       'products/moite-kifli/kifli.png',
-      'products/moite-kifli/moite-kifli.jpg'
+      'products/moite-kifli/IMG_0772.jpg'
     ],
     horeca: {
       pieceKey: 'products.horeca.piece.30g',
