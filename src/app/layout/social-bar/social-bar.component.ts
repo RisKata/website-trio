@@ -16,7 +16,7 @@ interface SocialLink {
 export class SocialBarComponent {
   readonly links: SocialLink[] = [
     { id: 'facebook', href: 'https://www.facebook.com/TRIO95DOO/', labelKey: 'social.facebook' },
-    { id: 'instagram', href: 'https://www.instagram.com', labelKey: 'social.instagram' },
-    { id: 'youtube', href: 'https://www.youtube.com', labelKey: 'social.youtube' }
+    { id: 'instagram', href: 'https://www.instagram.com/trio.95/', labelKey: 'social.instagram' },
+    { id: 'youtube', href: 'https://www.youtube.com/@trio2863', labelKey: 'social.youtube' }
   ];
 }
