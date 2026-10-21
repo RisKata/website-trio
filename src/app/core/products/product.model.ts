@@ -5,7 +5,7 @@ export type Allergen = 'gluten' | 'milk' | 'soy' | 'egg' | 'mustard' | 'sesame';
 export type ProductMark = 'vegetarian' | 'vegan' | Allergen;
 
 export interface HorecaSpec {
-  pieceKey: TranslationKey;
+  pieceKey?: TranslationKey;
   packKey: TranslationKey;
 }
 
@@ -30,6 +30,8 @@ export interface Product {
   ingredientsKey: TranslationKey;
   weightKey: TranslationKey;
   weightGrams: number;
+  /** Retail pack weight when it is not a single gram amount. */
+  retailWeightKey?: TranslationKey;
   allergens: Allergen[];
   diet: Diet;
   preparationKey: TranslationKey;

@@ -7,6 +7,7 @@ const puffCheese: Product = {
   ingredientsKey: 'products.p01.ingredients',
   weightKey: 'products.p01.weight',
   weightGrams: 500,
+  retailWeightKey: 'products.retail.weight.500g1kg',
   allergens: ['gluten', 'milk', 'egg'],
   diet: 'none',
   preparationKey: 'products.p01.preparation',
@@ -56,7 +57,7 @@ const croissantPlain: Product = {
   categoryKey: 'products.category.puff',
   category: 'Puff',
   images: [
-    'products/kroasan-blag/croassant.jpeg',
+    'products/kroasan-blag/kroasan.png',
     'products/kroasan-blag/half-croassant.jpeg'
   ],
   retail: false,

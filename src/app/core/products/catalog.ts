@@ -12,6 +12,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p01.ingredients',
     weightKey: 'products.p28.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p01.preparation',
@@ -21,8 +22,8 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-      'products/lisnati-pogachici-so-sirenje/pogacici-sirenje.png',
-      'products/lisnati-pogachici-so-sirenje/IMG_8666.jpg'
+      'products/mini-lisnati-pogachici-so-sirenje/pogacici-sirenje.png',
+      'products/mini-lisnati-pogachici-so-sirenje/IMG_8666.jpg'
     ]
   },
   {
@@ -32,6 +33,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p02.ingredients',
     weightKey: 'products.p02.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p02.preparation',
@@ -40,10 +42,7 @@ export const products: Product[] = [
     extraKey: 'products.p02.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: [
-      'products/lisnati-pogachici-so-kashkaval/pogacici-kaskaval.png',
-      'products/lisnati-pogachici-so-kashkaval/IMG_8359.JPG'
-    ]
+    images: ['products/lisnati-pogachici-so-kashkaval/pogacici-kaskaval.png']
   },
   {
     id: 'mini-puff-kashkaval',
@@ -52,6 +51,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p02.ingredients',
     weightKey: 'products.p29.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten', 'milk', 'egg'],
     diet: 'none',
     preparationKey: 'products.p02.preparation',
@@ -61,8 +61,8 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-      'products/lisnati-pogachici-so-kashkaval/pogacici-kaskaval.png',
-      'products/lisnati-pogachici-so-kashkaval/IMG_8359.JPG'
+      'products/mini-lisnati-pogachici-so-kashkaval/pogacici-kaskaval.png',
+      'products/mini-lisnati-pogachici-so-kashkaval/IMG_8359.JPG'
     ]
   },
   {
@@ -72,6 +72,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p03.ingredients',
     weightKey: 'products.p03.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten', 'milk'],
     diet: 'none',
     preparationKey: 'products.p03.preparation',
@@ -80,7 +81,7 @@ export const products: Product[] = [
     extraKey: 'products.p03.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png']
+    images: ['products/lisnati-pogachici-so-spanak-i-sirenje/pogacici-spanak.png']
   },
   {
     id: 'mini-puff-spinach-cheese',
@@ -89,6 +90,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p03.ingredients',
     weightKey: 'products.p31.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten', 'milk'],
     diet: 'none',
     preparationKey: 'products.p03.preparation',
@@ -97,7 +99,7 @@ export const products: Product[] = [
     extraKey: 'products.p03.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png']
+    images: ['products/mini-lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png']
   },
   {
     id: 'puff-pizza',
@@ -106,6 +108,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p04.ingredients',
     weightKey: 'products.p04.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten', 'egg'],
     diet: 'none',
     preparationKey: 'products.p04.preparation',
@@ -126,6 +129,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p04.ingredients',
     weightKey: 'products.p30.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten', 'egg'],
     diet: 'none',
     preparationKey: 'products.p04.preparation',
@@ -135,8 +139,8 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-      'products/lisnati-pogachici-so-pica-fil/pogacici.png',
-      'products/lisnati-pogachici-so-pica-fil/IMG_8387.jpg'
+      'products/mini-lisnati-pogachici-so-pica-fil/pogacici.png',
+      'products/mini-lisnati-pogachici-so-pica-fil/IMG_8387.jpg'
     ]
   },
   {
@@ -146,6 +150,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p05.ingredients',
     weightKey: 'products.p05.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten'],
     diet: 'none',
     preparationKey: 'products.p05.preparation',
@@ -155,7 +160,7 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-      'products/lisnati-pogachici-so-jabolko-i-cimet/pogacici-jabolko.png',
+      'products/lisnati-pogachici-so-jabolko-i-cimet/pogacici-jabolko-pack.png',
       'products/lisnati-pogachici-so-jabolko-i-cimet/IMG_8404.jpg'
     ]
   },
@@ -166,6 +171,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p06.ingredients',
     weightKey: 'products.p06.weight',
     weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten'],
     diet: 'none',
     preparationKey: 'products.p06.preparation',
@@ -175,7 +181,7 @@ export const products: Product[] = [
     categoryKey: 'products.category.puff',
     category: 'Puff',
     images: [
-      'products/lisnati-pogachici-so-vishna/visni.png',
+      'products/lisnati-pogachici-so-vishna/pogacici-visna.png',
       'products/lisnati-pogachici-so-vishna/IMG_8410.jpg'
     ]
   },
@@ -186,26 +192,7 @@ export const products: Product[] = [
     ingredientsKey: 'products.p07.ingredients',
     weightKey: 'products.p07.weight',
     weightGrams: 500,
-    allergens: ['gluten'],
-    diet: 'none',
-    preparationKey: 'products.p07.preparation',
-    nutritionKey: 'products.p07.nutrition',
-    storageKey: 'products.p07.storage',
-    extraKey: 'products.p07.extra',
-    categoryKey: 'products.category.puff',
-    category: 'Puff',
-    images: [
-      'products/lisnati-pogachici-so-maslinki-i-pechurki/pogacici-maslinki.png',
-      'products/lisnati-pogachici-so-maslinki-i-pechurki/IMG_8699.jpg'
-    ]
-  },
-  {
-    id: 'mini-puff-olives-mushrooms',
-    nameKey: 'products.p32.name',
-    descKey: 'products.p07.desc',
-    ingredientsKey: 'products.p07.ingredients',
-    weightKey: 'products.p07.weight',
-    weightGrams: 500,
+    retailWeightKey: 'products.retail.weight.500g1kg',
     allergens: ['gluten'],
     diet: 'none',
     preparationKey: 'products.p07.preparation',
@@ -284,7 +271,10 @@ export const products: Product[] = [
     extraKey: 'products.p10.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/piroshki-sirenje/IMG_0732.jpg'],
+    images: [
+      'products/piroshki-sirenje/piroski-sirenje.png',
+      'products/piroshki-sirenje/IMG_0732.jpg'
+    ],
     retailPieces: 4,
     horeca: {
       pieceKey: 'products.horeca.piece.100g',
@@ -331,7 +321,7 @@ export const products: Product[] = [
     extraKey: 'products.p12.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/polupecheno-testo-za-pica/testo-za-pica.jpg']
+    images: ['products/polupecheno-testo-za-pica/testo.jpeg']
   },
   pizzaCapricciosa,
   {
@@ -421,7 +411,10 @@ export const products: Product[] = [
     extraKey: 'products.p18.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/kashkaval-pohovan/IMG_0575.jpg'],
+    images: [
+      'products/kashkaval-pohovan/pohovan-kaskaval.png',
+      'products/kashkaval-pohovan/IMG_0575.jpg'
+    ],
     retail: false,
     horeca: {
       pieceKey: 'products.horeca.piece.40-80g',
@@ -443,7 +436,10 @@ export const products: Product[] = [
     extraKey: 'products.p19.extra',
     categoryKey: 'products.category.fry',
     category: 'Fry',
-    images: ['products/zdenki-pohovani/IMG_0744.jpg'],
+    images: [
+      'products/zdenki-pohovani/zdenki-pohovani.png',
+      'products/zdenki-pohovani/IMG_0744.jpg'
+    ],
     retail: false,
     horeca: {
       pieceKey: 'products.horeca.piece.27g',
@@ -596,7 +592,14 @@ export const products: Product[] = [
     extraKey: 'products.p27.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: ['products/posni-kifli/IMG_0454.jpg']
+    images: [
+      'products/posni-kifli/posni-kifli.png',
+      'products/posni-kifli/IMG_0454.jpg'
+    ],
+    retail: false,
+    horeca: {
+      packKey: 'products.horeca.pack.10kg'
+    }
   }
 ];
 

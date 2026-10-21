@@ -20,7 +20,6 @@
   <url><loc>https://www.trio.mk/products/puff-apple-cinnamon</loc></url>
   <url><loc>https://www.trio.mk/products/puff-cherry</loc></url>
   <url><loc>https://www.trio.mk/products/puff-olives-mushrooms</loc></url>
-  <url><loc>https://www.trio.mk/products/mini-puff-olives-mushrooms</loc></url>
   <url><loc>https://www.trio.mk/products/piroshki-pork</loc></url>
   <url><loc>https://www.trio.mk/products/piroshki-chicken</loc></url>
   <url><loc>https://www.trio.mk/products/piroshki-cheese</loc></url>
