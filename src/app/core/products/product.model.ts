@@ -40,5 +40,7 @@ export interface Product {
   category: 'Puff' | 'Dough' | 'Fry';
   images: string[];
   flavors?: ProductFlavor[];
+  /** Pieces in the retail package, when that count is shown on the product page. */
+  retailPieces?: number;
   horeca?: HorecaSpec;
 }

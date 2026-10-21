@@ -15,13 +15,136 @@
 }
 
 .pdf-frame {
-  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: min(85vh, 64rem);
+  overflow: hidden;
   border: 1px solid var(--color-beige-dark);
   border-radius: 1rem;
+  background: var(--color-bg-alt);
+  box-shadow: var(--shadow-md);
+}
+
+.pdf-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--color-beige-dark);
+  background: var(--color-white);
+}
+
+.pdf-toolbar-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pdf-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-beige-dark);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.pdf-tool[aria-pressed='true'] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.pdf-tool:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pdf-page-label {
+  min-width: 3.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .pdf-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    padding: 0.65rem;
+  }
+
+  .pdf-toolbar-group {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+  }
+
+  .pdf-toolbar-fit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pdf-tool-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    flex: 0 0 auto;
+    font-size: 1.15rem;
+  }
+
+  .pdf-tool-fit {
+    min-height: 2.75rem;
+    padding: 0.45rem 0.5rem;
+    line-height: 1.15;
+  }
+
+  .pdf-page-label {
+    min-width: 3rem;
+  }
+}
+
+.pdf-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  padding: 0.75rem;
+}
+
+.pdf-stage canvas {
+  display: block;
+  margin: auto;
   background: var(--color-white);
   box-shadow: var(--shadow-md);
+}
+
+.pdf-status {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--color-bg-alt);
 }
 
 .cta-banner {

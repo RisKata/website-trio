@@ -10,7 +10,35 @@
 
 <section class="section viewer" id="preview">
   <div class="container">
-    <iframe class="pdf-frame" [src]="pdfSrc" [title]="'catalog.preview' | t"></iframe>
+    <div class="pdf-frame" [attr.aria-label]="'catalog.preview' | t" role="region" [attr.aria-busy]="loading()">
+      @if (loading()) {
+        <p class="pdf-status">{{ 'catalog.loading' | t }}</p>
+      }
+      @if (failed()) {
+        <p class="pdf-status">{{ 'catalog.previewError' | t }}</p>
+      }
+      @if (pageCount() > 0) {
+        <div class="pdf-toolbar" role="toolbar" [attr.aria-label]="'catalog.viewOptions' | t">
+          <div class="pdf-toolbar-group">
+            <button type="button" class="pdf-tool pdf-tool-icon" (click)="changePage(-1)" [disabled]="page() <= 1" [attr.aria-label]="'catalog.prevPage' | t" [attr.title]="'catalog.prevPage' | t">‹</button>
+            <span class="pdf-page-label">{{ page() }} / {{ pageCount() }}</span>
+            <button type="button" class="pdf-tool pdf-tool-icon" (click)="changePage(1)" [disabled]="page() >= pageCount()" [attr.aria-label]="'catalog.nextPage' | t" [attr.title]="'catalog.nextPage' | t">›</button>
+          </div>
+          <div class="pdf-toolbar-group">
+            <button type="button" class="pdf-tool pdf-tool-icon" (click)="changeZoom(-1)" [disabled]="!canZoomOut()" [attr.aria-label]="'catalog.zoomOut' | t" [attr.title]="'catalog.zoomOut' | t">−</button>
+            <span class="pdf-page-label">{{ zoomPercent() }}%</span>
+            <button type="button" class="pdf-tool pdf-tool-icon" (click)="changeZoom(1)" [disabled]="!canZoomIn()" [attr.aria-label]="'catalog.zoomIn' | t" [attr.title]="'catalog.zoomIn' | t">+</button>
+          </div>
+          <div class="pdf-toolbar-group pdf-toolbar-fit">
+            <button type="button" class="pdf-tool pdf-tool-fit" (click)="setFit('page')" [attr.aria-pressed]="fit() === 'page' && zoom() === 1" [attr.title]="'catalog.fitPage' | t">{{ 'catalog.fitPage' | t }}</button>
+            <button type="button" class="pdf-tool pdf-tool-fit" (click)="setFit('width')" [attr.aria-pressed]="fit() === 'width' && zoom() === 1" [attr.title]="'catalog.fitWidth' | t">{{ 'catalog.fitWidth' | t }}</button>
+          </div>
+        </div>
+      }
+      <div class="pdf-stage" #stage>
+        <canvas #pageCanvas></canvas>
+      </div>
+    </div>
   </div>
 </section>
 

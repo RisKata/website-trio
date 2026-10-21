@@ -80,10 +80,7 @@ export const products: Product[] = [
     extraKey: 'products.p03.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: [
-      'products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png',
-      'products/lisnati-pogachici-so-spanakj-i-sirenje/IMG_7920.JPG'
-    ]
+    images: ['products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png']
   },
   {
     id: 'mini-puff-spinach-cheese',
@@ -100,10 +97,7 @@ export const products: Product[] = [
     extraKey: 'products.p03.extra',
     categoryKey: 'products.category.puff',
     category: 'Puff',
-    images: [
-      'products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png',
-      'products/lisnati-pogachici-so-spanakj-i-sirenje/IMG_7920.JPG'
-    ]
+    images: ['products/lisnati-pogachici-so-spanakj-i-sirenje/pogacici-spanak.png']
   },
   {
     id: 'puff-pizza',
@@ -244,6 +238,7 @@ export const products: Product[] = [
       'products/piroshki-so-svinska-shunka/piroski-sunka.png',
       'products/piroshki-so-svinska-shunka/IMG_9146.JPG'
     ],
+    retailPieces: 4,
     horeca: {
       pieceKey: 'products.horeca.piece.100g',
       packKey: 'products.horeca.pack.50pcs'
@@ -268,6 +263,7 @@ export const products: Product[] = [
       'products/piroshki-so-pileshka-shunka/piroslki-pileska-sunka.png',
       'products/piroshki-so-pileshka-shunka/IMG_9146.JPG'
     ],
+    retailPieces: 4,
     horeca: {
       pieceKey: 'products.horeca.piece.100g',
       packKey: 'products.horeca.pack.50pcs'
@@ -289,6 +285,7 @@ export const products: Product[] = [
     categoryKey: 'products.category.fry',
     category: 'Fry',
     images: ['products/piroshki-sirenje/IMG_0732.jpg'],
+    retailPieces: 4,
     horeca: {
       pieceKey: 'products.horeca.piece.100g',
       packKey: 'products.horeca.pack.50pcs'
@@ -313,6 +310,7 @@ export const products: Product[] = [
       'products/piroshki-kashkaval/piroski-kaskaval.png',
       'products/piroshki-kashkaval/IMG_9381.jpg'
     ],
+    retailPieces: 4,
     horeca: {
       pieceKey: 'products.horeca.piece.100g',
       packKey: 'products.horeca.pack.50pcs'

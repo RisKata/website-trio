@@ -182,10 +182,12 @@
 }
 
 .horeca-pack {
+  & + & h2 {
+    margin-top: 1.35rem;
+  }
+
   h2 {
     margin-top: 0.35rem;
-    text-transform: none;
-    letter-spacing: 0.02em;
   }
 
   dl {
