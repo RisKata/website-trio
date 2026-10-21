@@ -4,6 +4,7 @@
   <url><loc>https://www.trio.mk/</loc></url>
   <url><loc>https://www.trio.mk/about</loc></url>
   <url><loc>https://www.trio.mk/products</loc></url>
+  <url><loc>https://www.trio.mk/catalog</loc></url>
   <url><loc>https://www.trio.mk/products/puff-cheese</loc></url>
   <url><loc>https://www.trio.mk/products/pizza-capricciosa</loc></url>
   <url><loc>https://www.trio.mk/products/croissant-plain</loc></url>
