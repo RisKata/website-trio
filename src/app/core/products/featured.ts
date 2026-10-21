@@ -6,7 +6,7 @@ const puffCheese: Product = {
   descKey: 'products.p01.desc',
   ingredientsKey: 'products.p01.ingredients',
   weightKey: 'products.p01.weight',
-  weightGrams: 1000,
+  weightGrams: 500,
   allergens: ['gluten', 'milk', 'egg'],
   diet: 'none',
   preparationKey: 'products.p01.preparation',

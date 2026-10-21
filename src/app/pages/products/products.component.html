@@ -110,6 +110,7 @@
           appAnimateOnScroll
           [routerLink]="['/products', product.id]"
           [queryParams]="selectedCategory === 'All' ? null : { category: selectedCategory }"
+          [state]="{ fromProductList: true }"
         >
           <span class="product-image">
             <img

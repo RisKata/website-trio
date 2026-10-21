@@ -1,8 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, HostListener, OnDestroy, effect, inject, signal } from '@angular/core';
 
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { TranslationService } from '../../core/i18n/translation.service';
@@ -23,12 +24,14 @@ interface NutritionTable {
 
 @Component({
   selector: 'app-product-detail',
-  imports: [RouterLink, TranslatePipe, MarkIconComponent],
+  imports: [TranslatePipe, MarkIconComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })
 export class ProductDetailComponent implements OnDestroy {
   private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+  private readonly location = inject(Location);
   private readonly title = inject(Title);
   private readonly i18n = inject(TranslationService);
 
@@ -74,6 +77,28 @@ export class ProductDetailComponent implements OnDestroy {
       return { category };
     }
     return null;
+  }
+
+  listHref(): string {
+    const query = this.backQuery();
+    const path = query ? `/products?category=${encodeURIComponent(query.category)}` : '/products';
+    return this.location.prepareExternalUrl(path);
+  }
+
+  returnToList(event: MouseEvent): void {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
+      return;
+    }
+
+    event.preventDefault();
+    const state = this.location.getState() as { fromProductList?: boolean } | null;
+    if (state?.fromProductList) {
+      this.location.back();
+      return;
+    }
+
+    const query = this.backQuery();
+    void this.router.navigate(['/products'], query ? { queryParams: query } : undefined);
   }
 
   titleFor(product: Product): TranslationKey {
