@@ -36,7 +36,8 @@ const pizzaCapricciosa: Product = {
   extraKey: 'products.p13.extra',
   categoryKey: 'products.category.dough',
   category: 'Dough',
-  images: ['products/pica-kapricioza/kapricioza.png']
+  images: ['products/pica-kapricioza/kapricioza.png'],
+  retailPieces: 1
 };
 
 const croissantPlain: Product = {
@@ -58,6 +59,7 @@ const croissantPlain: Product = {
     'products/kroasan-blag/croassant.jpeg',
     'products/kroasan-blag/half-croassant.jpeg'
   ],
+  retail: false,
   horeca: {
     pieceKey: 'products.horeca.piece.30g',
     packKey: 'products.horeca.pack.10kg'

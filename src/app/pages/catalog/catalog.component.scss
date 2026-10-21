@@ -125,6 +125,8 @@
   overflow: auto;
   scrollbar-gutter: stable;
   padding: 0.75rem;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
 }
 
 .pdf-stage canvas {

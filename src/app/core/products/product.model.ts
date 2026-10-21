@@ -42,5 +42,7 @@ export interface Product {
   flavors?: ProductFlavor[];
   /** Pieces in the retail package, when that count is shown on the product page. */
   retailPieces?: number;
+  /** Omitted products are sold in retail packs. Set false when there is no retail pack. */
+  retail?: boolean;
   horeca?: HorecaSpec;
 }

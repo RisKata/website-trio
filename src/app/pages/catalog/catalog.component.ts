@@ -68,22 +68,88 @@ export class CatalogComponent {
   private lastDrawKey = '';
   private renderTask: { cancel: () => void; promise: Promise<unknown> } | null = null;
   private resizeObserver: ResizeObserver | null = null;
+  private stageElement: HTMLElement | null = null;
+  private swipeStart: { x: number; y: number; pointerId: number } | null = null;
+  private readonly onTouchMove = (event: TouchEvent): void => {
+    const start = this.swipeStart;
+    if (!start || event.touches.length !== 1) {
+      return;
+    }
+
+    const touch = event.touches[0];
+    const dx = touch.clientX - start.x;
+    const dy = touch.clientY - start.y;
+    const stage = this.stageRef().nativeElement;
+    const canPanSideways = stage.scrollWidth > stage.clientWidth + 2;
+    if (!canPanSideways && Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) {
+      event.preventDefault();
+    }
+  };
 
   constructor() {
     inject(DestroyRef).onDestroy(() => {
       this.destroyed = true;
       this.renderTask?.cancel();
       this.resizeObserver?.disconnect();
+      this.stageElement?.removeEventListener('touchmove', this.onTouchMove);
       void this.pdf?.destroy();
     });
 
     afterNextRender(() => {
+      const stage = this.stageRef().nativeElement;
+      this.stageElement = stage;
       this.resizeObserver = new ResizeObserver(() => {
         void this.drawPage();
       });
-      this.resizeObserver.observe(this.stageRef().nativeElement);
+      this.resizeObserver.observe(stage);
+      stage.addEventListener('touchmove', this.onTouchMove, { passive: false });
       void this.openPdf();
     });
+  }
+
+  beginSwipe(event: PointerEvent): void {
+    if (event.pointerType === 'mouse' && event.button !== 0) {
+      return;
+    }
+
+    this.swipeStart = { x: event.clientX, y: event.clientY, pointerId: event.pointerId };
+    try {
+      this.stageRef().nativeElement.setPointerCapture(event.pointerId);
+    } catch {
+      // The pointer can already be gone on a very fast tap.
+    }
+  }
+
+  endSwipe(event: PointerEvent): void {
+    const start = this.swipeStart;
+    this.swipeStart = null;
+    if (!start || start.pointerId !== event.pointerId) {
+      return;
+    }
+
+    const dx = event.clientX - start.x;
+    const dy = event.clientY - start.y;
+    if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy) * 1.25) {
+      return;
+    }
+
+    const stage = this.stageRef().nativeElement;
+    if (stage.scrollWidth > stage.clientWidth + 2) {
+      const atStart = stage.scrollLeft <= 1;
+      const atEnd = stage.scrollLeft + stage.clientWidth >= stage.scrollWidth - 1;
+      if (dx < 0 && !atEnd) {
+        return;
+      }
+      if (dx > 0 && !atStart) {
+        return;
+      }
+    }
+
+    this.changePage(dx < 0 ? 1 : -1);
+  }
+
+  cancelSwipe(): void {
+    this.swipeStart = null;
   }
 
   changePage(delta: number): void {

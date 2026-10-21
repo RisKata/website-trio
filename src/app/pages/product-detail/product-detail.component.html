@@ -59,21 +59,23 @@
           </span>
           <h1>{{ titleKey | t }}</h1>
 
-          <section class="horeca-pack">
-            <h2>{{ 'products.retail.title' | t }}</h2>
-            <dl>
-              <div>
-                <dt>{{ 'products.details.weight' | t }}</dt>
-                <dd>{{ item.weightGrams }} {{ 'products.weight.unit' | t }}</dd>
-              </div>
-              @if (item.retailPieces; as pieces) {
+          @if (item.retail !== false) {
+            <section class="horeca-pack">
+              <h2>{{ 'products.retail.title' | t }}</h2>
+              <dl>
                 <div>
-                  <dt>{{ 'products.retail.pieces' | t }}</dt>
-                  <dd>{{ pieces }}</dd>
+                  <dt>{{ 'products.details.weight' | t }}</dt>
+                  <dd>{{ item.weightGrams }} {{ 'products.weight.unit' | t }}</dd>
                 </div>
-              }
-            </dl>
-          </section>
+                @if (item.retailPieces; as pieces) {
+                  <div>
+                    <dt>{{ 'products.retail.pieces' | t }}</dt>
+                    <dd>{{ pieces }}</dd>
+                  </div>
+                }
+              </dl>
+            </section>
+          }
 
           @if (item.flavors?.length) {
             <section class="flavors" [attr.aria-label]="'products.flavors.title' | t">

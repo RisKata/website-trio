@@ -349,7 +349,8 @@ export const products: Product[] = [
     extraKey: 'products.p14.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/venecija-golema/venecija.png']
+    images: ['products/venecija-golema/venecija.png'],
+    retailPieces: 1
   },
   {
     id: 'mini-pizza-ham',
@@ -366,7 +367,8 @@ export const products: Product[] = [
     extraKey: 'products.p15.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/mini-pica-so-shunka/mini-pica-sunka.png']
+    images: ['products/mini-pica-so-shunka/mini-pica-sunka.png'],
+    retailPieces: 1
   },
   {
     id: 'mini-pizza-chicken',
@@ -383,7 +385,8 @@ export const products: Product[] = [
     extraKey: 'products.p16.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/mini-pica-so-pileshka-shunka/mini-pileska-sunka.png']
+    images: ['products/mini-pica-so-pileshka-shunka/mini-pileska-sunka.png'],
+    retailPieces: 1
   },
   {
     id: 'my-pizza',
@@ -400,7 +403,8 @@ export const products: Product[] = [
     extraKey: 'products.p17.extra',
     categoryKey: 'products.category.dough',
     category: 'Dough',
-    images: ['products/moja-pica/IMG_5850.JPG']
+    images: ['products/moja-pica/IMG_5850.JPG'],
+    retailPieces: 1
   },
   {
     id: 'breaded-kashkaval',
@@ -418,6 +422,7 @@ export const products: Product[] = [
     categoryKey: 'products.category.fry',
     category: 'Fry',
     images: ['products/kashkaval-pohovan/IMG_0575.jpg'],
+    retail: false,
     horeca: {
       pieceKey: 'products.horeca.piece.40-80g',
       packKey: 'products.horeca.pack.8kg'
@@ -439,6 +444,7 @@ export const products: Product[] = [
     categoryKey: 'products.category.fry',
     category: 'Fry',
     images: ['products/zdenki-pohovani/IMG_0744.jpg'],
+    retail: false,
     horeca: {
       pieceKey: 'products.horeca.piece.27g',
       packKey: 'products.horeca.pack.8kg'
