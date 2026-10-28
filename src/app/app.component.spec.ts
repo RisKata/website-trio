@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'frozen-food-factory' title`, () => {
+  it(`should have the 'trio-website' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('frozen-food-factory');
+    expect(app.title).toEqual('trio-website');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, frozen-food-factory');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, trio-website');
   });
 });
