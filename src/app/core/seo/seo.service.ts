@@ -110,7 +110,7 @@ export class SeoService {
           url: `${SITE_ORIGIN}/`,
           logo: `${SITE_ORIGIN}/logo.png`,
           email: 'trio_95@t.mk',
-          telephone: ['+38948418977', '+38948423279', '+38970934438'],
+          telephone: ['+38948418977', '+38948423279', '+38975419000', '+38970934438'],
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'Александар Македонски бб',
